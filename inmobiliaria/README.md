@@ -43,7 +43,7 @@ Video actual: `public/assets/hero.mp4` (HEADER_STATEVIEW.mp4: 16,14 s, 2560×144
 | 0–15 % | 0–0,9 s | Terreno vacío | Logo "StateView" (naranja #F97316) + subtítulo |
 | 15–70 % | 0,9–11 s | Construcción | El texto se desvanece y sube 20 px (15–25 %) |
 | 70–85 % | 11–12,6 s | Casa terminada | Aparece "Ver proyectos →" (70–74 %) |
-| 85–100 % | 12,6–16,14 s | La cámara sube a las nubes | El botón se va (85–89 %); fundido a #F6F5F2 (92–100 %) |
+| 85–100 % | 12,6–16,14 s | La cámara sube a las nubes | El botón se va (85–89 %); entre las nubes aparece "StateView" con la foto de la casa dentro de las letras + "AI Real Estate Video Studio" (93,5–98 %); el borde inferior se funde con #F6F5F2 (93–100 %) |
 
 El scroll se mapea **por tramos** al tiempo del video: cada etapa ocupa exactamente su tramo de scroll aunque dure distinto en el video.
 Todas las transiciones son GSAP + ScrollTrigger (opacity/transform), con el mismo suavizado que el video, y se revierten al subir.
@@ -53,7 +53,8 @@ Para cambiar el video:
 2. `npm run frames` (requiere **ffmpeg**: `brew install ffmpeg` · `sudo apt install ffmpeg` · `winget install ffmpeg`). Genera:
    - `public/assets/frames/desktop/` — 24 fps, 1920 px · `public/assets/frames/mobile/` — recorte 9:16 sobre la casa, 1080 px de alto
    - `public/assets/frames/manifest.json` (cantidad, fps, duración)
-   - `hero-start.*` (primer fotograma: se ve mientras cargan los demás), `hero-poster.jpg` (último fotograma) y `og-image.jpg`
+   - `hero-start.*` (primer fotograma: se ve mientras cargan los demás), `hero-poster.jpg` (último fotograma), `og-image.jpg`
+     y `hero-house.webp` (casa terminada, `HOUSE_TIME=11.5`: rellena las letras del logo al final del hero)
    Opciones: `FPS=15 QUALITY=62 MOBILE_CROP_X=0.63 OG_TIME=12 npm run frames`.
 3. Ajusta los tiempos de `STAGES` en `hero.js` a las escenas del nuevo video.
 

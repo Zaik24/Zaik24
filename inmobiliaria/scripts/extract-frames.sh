@@ -11,11 +11,13 @@
 #   MOBILE_CROP_X=0.63 posición del recorte móvil (0 = izquierda, 1 = derecha); 0.63 centra la casa
 #   QUALITY=62         calidad WebP (0-100)
 #   OG_TIME=12         segundo del video usado para la imagen Open Graph (casa terminada)
+#   HOUSE_TIME=11.5    segundo del video con la casa terminada que rellena las letras "StateView" al final del hero
 #
 # Genera además:
 #   public/assets/hero-start.jpg|.webp|-mobile.webp  primer fotograma (se ve mientras cargan los demás)
 #   public/assets/hero-poster.jpg                    último fotograma (nubes)
 #   public/assets/og-image.jpg                       1200×630 para redes
+#   public/assets/hero-house.webp                    casa terminada (relleno del logo al final del hero)
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
@@ -27,6 +29,7 @@ MOBILE_H="${MOBILE_H:-1080}"
 MOBILE_CROP_X="${MOBILE_CROP_X:-0.63}"
 QUALITY="${QUALITY:-62}"
 OG_TIME="${OG_TIME:-12}"
+HOUSE_TIME="${HOUSE_TIME:-11.5}"
 
 command -v ffmpeg >/dev/null || {
   echo "✗ Falta ffmpeg. Instálalo con: brew install ffmpeg (macOS) · sudo apt install ffmpeg (Ubuntu/Debian) · winget install ffmpeg (Windows)"
@@ -69,6 +72,7 @@ ffmpeg -loglevel error -y -i "$SRC" -vf "scale=${DESKTOP_W}:-2" -frames:v 1 -q:v
 ffmpeg -loglevel error -y -i "$A/hero-start.jpg" -c:v libwebp -quality 72 "$A/hero-start.webp"
 ffmpeg -loglevel error -y -i "$A/hero-start.jpg" -vf "${MOBILE_CROP}" -c:v libwebp -quality 72 "$A/hero-start-mobile.webp"
 ffmpeg -loglevel error -y -sseof -0.1 -i "$SRC" -vf "scale=${DESKTOP_W}:-2" -update 1 -q:v 3 "$A/hero-poster.jpg"
+ffmpeg -loglevel error -y -ss "$HOUSE_TIME" -i "$SRC" -vf "scale=1920:-2:flags=lanczos" -frames:v 1 -c:v libwebp -quality 80 "$A/hero-house.webp"
 ffmpeg -loglevel error -y -ss "$OG_TIME" -i "$SRC" -vf "scale=1200:-2,crop=1200:630:0:(ih-630)/2" -frames:v 1 -q:v 3 "$A/og-image.jpg"
 
 echo "✓ $COUNT fotogramas (${DURATION}s) · escritorio ${DW}×${DH} ($(du -sh "$OUT/desktop" | cut -f1)) · móvil ${MW}×${MH} ($(du -sh "$OUT/mobile" | cut -f1))"

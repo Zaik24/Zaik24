@@ -9,7 +9,8 @@ const MANIFEST_URL = '/assets/frames/manifest.json';
  *   0–15 %  terreno vacío (0–0,9 s)           → logo y subtítulo
  *  15–70 %  construcción (0,9–11 s)           → el texto se desvanece y sube 20 px
  *  70–85 %  casa terminada (11–12,6 s)        → botón "Ver proyectos"
- *  85–100 % la cámara sube a las nubes (12,6 s–fin) → el botón se va y todo se funde con #F6F5F2
+ *  85–100 % la cámara sube a las nubes (12,6 s–fin) → se va el botón; aparece "StateView" con la casa
+ *           dentro de las letras y el borde inferior se funde con #F6F5F2
  * Para otro video, ajusta los tiempos (segundos). `null` = final del video.
  */
 export const STAGES = [
@@ -25,7 +26,8 @@ const TEXT = {
   introOut: [0.15, 0.25], // titular y subtítulo se desvanecen
   ctaIn: [0.7, 0.74], // aparece el botón
   ctaOut: [0.85, 0.89], // se va el botón
-  fadeToPage: [0.92, 1], // nubes → #F6F5F2
+  outroIn: [0.935, 0.98], // "StateView" con la casa dentro, entre las nubes
+  fadeToPage: [0.93, 1], // borde inferior de las nubes → #F6F5F2
 };
 
 /** Progreso de scroll (0–1) → progreso del video (0–1), lineal por tramos. */
@@ -80,6 +82,7 @@ function initHeroText(hero) {
   const scrim = hero.querySelector('[data-hero-scrim]');
   const cta = hero.querySelector('[data-hero-cta]');
   const fade = hero.querySelector('[data-hero-fade]');
+  const outro = hero.querySelector('[data-hero-outro]');
 
   // Línea de tiempo de duración 1 = progreso del scroll del hero; todo es reversible
   gsap
@@ -91,6 +94,7 @@ function initHeroText(hero) {
     .to(scrim, { opacity: 0, duration: len(TEXT.introOut) }, at(TEXT.introOut))
     .fromTo(cta, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, ease: 'power2.out', duration: len(TEXT.ctaIn) }, at(TEXT.ctaIn))
     .to(cta, { autoAlpha: 0, y: -12, ease: 'power1.in', duration: len(TEXT.ctaOut) }, at(TEXT.ctaOut))
+    .fromTo(outro, { opacity: 0, y: 40, scale: 1.06 }, { opacity: 1, y: 0, scale: 1, ease: 'power2.out', duration: len(TEXT.outroIn) }, at(TEXT.outroIn))
     .to(fade, { opacity: 1, ease: 'power1.inOut', duration: len(TEXT.fadeToPage) }, at(TEXT.fadeToPage))
     .set({}, {}, 1);
 }

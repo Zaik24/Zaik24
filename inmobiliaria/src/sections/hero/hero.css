@@ -53,9 +53,60 @@
   pointer-events: none;
 }
 .hero__fade {
-  background: var(--c-offwhite);
+  background: linear-gradient(180deg, rgba(246, 245, 242, 0) 45%, rgba(246, 245, 242, 0.85) 80%, var(--c-offwhite) 100%);
   opacity: 0;
   pointer-events: none;
+}
+
+/* ---------- Cierre: logo relleno con la foto de la casa, sobre las nubes ---------- */
+.hero__outro {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--header-h) var(--gutter) 6vh;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+}
+.hero__outro-logo {
+  font-family: var(--f-display);
+  font-size: clamp(4.2rem, 19vw, 19rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  padding: 0 0.04em 0.06em; /* que el recorte no corte la "w" ni descendentes */
+  color: var(--c-brand); /* respaldo si el navegador no recorta fondos en texto */
+  /* velo cálido sobre la foto para que las letras contrasten con las nubes */
+  background:
+    linear-gradient(rgba(45, 22, 6, 0.28), rgba(45, 22, 6, 0.28)),
+    var(--house) 72% 74% / 135% auto no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 18px 40px rgba(70, 40, 10, 0.18));
+}
+.hero__outro-sub {
+  margin-top: clamp(4px, 1vh, 14px);
+  font-family: var(--f-display);
+  font-size: clamp(1.4rem, 4.4vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: #2b2b2b;
+  /* se disuelve hacia abajo, entre las nubes */
+  -webkit-mask-image: linear-gradient(180deg, #000 20%, rgba(0, 0, 0, 0.15) 100%);
+  mask-image: linear-gradient(180deg, #000 20%, rgba(0, 0, 0, 0.15) 100%);
+  opacity: 0.85;
+}
+@media (max-width: 767px) {
+  .hero__outro-logo {
+    background-size: auto, 230% auto;
+    background-position: center, 66% 70%;
+  }
 }
 
 /* ---------- Texto ---------- */
@@ -134,7 +185,8 @@
     height: auto;
   }
   .hero__canvas,
-  .hero__fade {
+  .hero__fade,
+  .hero__outro {
     display: none;
   }
   .js .hero__cta {
