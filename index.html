@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>El Farolito — Cocina uruguaya e italiana en Corralejo, Fuerteventura</title>
+  <meta name="description" content="Restaurante de cocina uruguaya e italiana en Corralejo, Fuerteventura. Fuego, pasta hecha a mano y sobremesa larga junto al Atlántico.">
+  <meta name="theme-color" content="#0f2a3d">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="El Farolito — Corralejo, Fuerteventura">
+  <meta property="og:description" content="Cocina uruguaya e italiana en Corralejo, Fuerteventura.">
+  <meta property="og:image" content="assets/hero/final.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Detecta JS y movimiento reducido antes de pintar (evita saltos) -->
+  <script>
+    (function (d) {
+      var c = d.documentElement.classList;
+      c.remove('no-js'); c.add('js');
+      try { if (matchMedia('(prefers-reduced-motion: reduce)').matches) c.add('reduced-motion'); } catch (e) {}
+    })(document);
+  </script>
+
+  <link rel="preload" href="assets/hero/poster-desktop.jpg" as="image" media="not all and (max-width: 760px) and (orientation: portrait)">
+  <link rel="preload" href="assets/hero/poster-mobile.jpg" as="image" media="(max-width: 760px) and (orientation: portrait)">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Contenido editable y manifiesto de la portada -->
+  <script src="contenido/config.js"></script>
+  <script src="contenido/textos.js"></script>
+  <script src="assets/hero/frames.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#historia" data-i18n="a11y.skip">Saltar al contenido</a>
+
+  <!-- ============================ NAVEGACIÓN ============================ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="El Farolito">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-farol"/></svg>
+        <span class="brand__name">El Farolito</span>
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Principal">
+        <a href="#historia" data-i18n="nav.historia">Historia</a>
+        <a href="#cocina" data-i18n="nav.cocina">Cocina</a>
+        <a href="#carta" data-i18n="nav.carta">Carta</a>
+        <a href="#ambiente" data-i18n="nav.ambiente">Ambiente</a>
+        <a href="#equipo" data-i18n="nav.equipo">Equipo</a>
+        <a href="#reservas" class="nav__cta" data-i18n="nav.reservar">Reservar</a>
+      </nav>
+
+      <div class="lang" role="group" data-i18n-attr="aria-label:a11y.lang" aria-label="Idioma del sitio">
+        <button type="button" class="lang__btn" data-lang="es" aria-pressed="true" lang="es">ES</button>
+        <span class="lang__sep" aria-hidden="true">|</span>
+        <button type="button" class="lang__btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+      </div>
+
+      <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-links"
+              data-i18n-attr="aria-label:a11y.menu" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============================== PORTADA ============================== -->
+    <section class="hero" id="hero" data-i18n-attr="aria-label:a11y.hero" aria-label="Portada">
+      <div class="hero__sticky">
+        <div class="hero__media" aria-hidden="true">
+          <!-- 1) Póster inmediato (se sustituye por el canvas en cuanto hay fotogramas) -->
+          <picture>
+            <source srcset="assets/hero/poster-mobile.jpg" media="(max-width: 760px) and (orientation: portrait)">
+            <img class="hero__poster" src="assets/hero/poster-desktop.jpg" alt="" decoding="async" fetchpriority="high">
+          </picture>
+          <!-- 2) Secuencia de imágenes en canvas -->
+          <canvas class="hero__canvas"></canvas>
+          <!-- 3) Respaldo: MP4 controlado por scroll (se crea solo si hace falta) -->
+        </div>
+        <div class="hero__veil" aria-hidden="true"></div>
+        <div class="hero__grain" aria-hidden="true"></div>
+
+        <div class="hero__scenes">
+          <p class="hero__scene" data-scene="0"><span data-i18n-html="hero.escena1">Del Río de la Plata al Atlántico.</span></p>
+          <p class="hero__scene" data-scene="1"><span data-i18n-html="hero.escena2">Recetas de Uruguay e Italia, <em>hechas a mano.</em></span></p>
+          <div class="hero__scene hero__scene--final" data-scene="2">
+            <h1 data-i18n-html="hero.escena3">El Farolito — Cocina uruguaya e italiana en Corralejo.</h1>
+            <a class="btn btn--light hero__cta" href="#reservas" data-i18n="hero.cta">Reservar mesa</a>
+          </div>
+        </div>
+
+        <div class="hero__hint" aria-hidden="true">
+          <span data-i18n="hero.hint">Desliza</span>
+          <i></i>
+        </div>
+        <div class="hero__progress" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <!-- ============================== HISTORIA ============================== -->
+    <section class="section historia" id="historia">
+      <div class="wrap historia__grid">
+        <div class="historia__text reveal">
+          <p class="kicker" data-i18n="historia.kicker">Nuestra historia</p>
+          <h2 class="title" data-i18n-html="historia.titulo">Dos orillas, <em>una misma mesa.</em></h2>
+          <p data-i18n="historia.p1"></p>
+          <p data-i18n="historia.p2"></p>
+        </div>
+
+        <figure class="route reveal" aria-hidden="true">
+          <svg viewBox="0 0 520 360" class="route__svg">
+            <defs>
+              <linearGradient id="route-grad" x1="0" x2="1">
+                <stop offset="0" stop-color="var(--celeste)"/>
+                <stop offset=".5" stop-color="var(--terracota)"/>
+                <stop offset="1" stop-color="var(--verde-it)"/>
+              </linearGradient>
+            </defs>
+            <path class="route__line" d="M70 270 C 170 90, 330 90, 260 210"/>
+            <path class="route__line route__line--b" d="M450 90 C 400 160, 330 150, 260 210"/>
+            <circle cx="70" cy="270" r="7" class="route__dot route__dot--uy"/>
+            <circle cx="450" cy="90" r="7" class="route__dot route__dot--it"/>
+            <circle cx="260" cy="210" r="11" class="route__dot route__dot--home"/>
+            <circle cx="260" cy="210" r="22" class="route__ring"/>
+          </svg>
+          <span class="route__label route__label--uy" data-i18n="historia.origen1">Río de la Plata</span>
+          <span class="route__label route__label--it" data-i18n="historia.origen2">Italia</span>
+          <span class="route__label route__label--home" data-i18n="historia.destino">Corralejo</span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- =============================== COCINA =============================== -->
+    <section class="section cocina" id="cocina">
+      <div class="wrap cocina__grid">
+        <figure class="photo photo--tall parallax reveal" data-speed="0.08">
+          <img src="assets/fotos/cocina-parrilla.jpg" data-placeholder="Cocina / parrilla" loading="lazy" decoding="async"
+               data-i18n-attr="alt:cocina.fotoAlt" alt="">
+        </figure>
+        <div class="cocina__text reveal">
+          <p class="kicker" data-i18n="cocina.kicker">La cocina</p>
+          <h2 class="title" data-i18n-html="cocina.titulo">Fuego, harina <em>y paciencia.</em></h2>
+          <p data-i18n="cocina.p1"></p>
+          <ul class="marks">
+            <li><svg aria-hidden="true"><use href="#icon-fuego"/></svg><span data-i18n="cocina.punto1"></span></li>
+            <li><svg aria-hidden="true"><use href="#icon-pasta"/></svg><span data-i18n="cocina.punto2"></span></li>
+            <li><svg aria-hidden="true"><use href="#icon-mesa"/></svg><span data-i18n="cocina.punto3"></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================ CARTA ================================ -->
+    <section class="section carta" id="carta">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="kicker" data-i18n="carta.kicker">La carta</p>
+          <h2 class="title" data-i18n-html="carta.titulo">Para compartir <em>sin mirar el reloj.</em></h2>
+          <p class="lead" data-i18n="carta.intro"></p>
+        </header>
+
+        <!-- Las tarjetas se rellenan desde contenido/textos.js (carta.categorias).
+             La foto de cada categoría se indica aquí con data-foto. -->
+        <div class="carta__grid" id="carta-grid">
+          <article class="dish reveal" data-cat="principales" data-foto="assets/fotos/platos-principales.jpg" data-placeholder="Platos principales"></article>
+          <article class="dish reveal" data-cat="postres" data-foto="assets/fotos/postres.jpg" data-placeholder="Postres"></article>
+          <article class="dish reveal" data-cat="bebidas" data-foto="assets/fotos/bebidas.jpg" data-placeholder="Bebidas"></article>
+        </div>
+        <p class="carta__nota reveal" data-i18n="carta.nota"></p>
+      </div>
+    </section>
+
+    <!-- =============================== AMBIENTE =============================== -->
+    <section class="section ambiente" id="ambiente">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="kicker" data-i18n="ambiente.kicker">El lugar</p>
+          <h2 class="title" data-i18n-html="ambiente.titulo">Sol afuera, <em>calor adentro.</em></h2>
+        </header>
+        <div class="ambiente__grid">
+          <figure class="place reveal">
+            <div class="photo photo--wide parallax" data-speed="0.06">
+              <img src="assets/fotos/fachada-terraza.jpg" data-placeholder="Fachada / terraza" loading="lazy" decoding="async"
+                   data-i18n-attr="alt:ambiente.terrazaAlt" alt="">
+            </div>
+            <figcaption>
+              <h3 data-i18n="ambiente.terraza">La terraza</h3>
+              <p data-i18n="ambiente.terrazaDesc"></p>
+            </figcaption>
+          </figure>
+          <figure class="place place--offset reveal">
+            <div class="photo photo--wide parallax" data-speed="0.1">
+              <img src="assets/fotos/salon.jpg" data-placeholder="Salón interior" loading="lazy" decoding="async"
+                   data-i18n-attr="alt:ambiente.salonAlt" alt="">
+            </div>
+            <figcaption>
+              <h3 data-i18n="ambiente.salon">El salón</h3>
+              <p data-i18n="ambiente.salonDesc"></p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================ EQUIPO ================================ -->
+    <section class="section equipo" id="equipo">
+      <div class="wrap equipo__grid">
+        <div class="equipo__text reveal">
+          <p class="kicker" data-i18n="equipo.kicker">El equipo</p>
+          <h2 class="title" data-i18n-html="equipo.titulo">Las manos <em>detrás de cada plato.</em></h2>
+          <p data-i18n="equipo.p1"></p>
+        </div>
+        <figure class="photo photo--wide parallax reveal" data-speed="0.07">
+          <img src="assets/fotos/equipo.jpg" data-placeholder="Equipo" loading="lazy" decoding="async"
+               data-i18n-attr="alt:equipo.fotoAlt" alt="">
+        </figure>
+      </div>
+    </section>
+
+    <!-- =============================== RESERVAS =============================== -->
+    <section class="section reservas" id="reservas">
+      <div class="wrap reservas__grid">
+        <div class="reservas__info reveal">
+          <p class="kicker kicker--light" data-i18n="reservas.kicker">Reservas</p>
+          <h2 class="title" data-i18n-html="reservas.titulo">Te guardamos <em>la mesa.</em></h2>
+          <p data-i18n="reservas.intro"></p>
+
+          <dl class="info">
+            <div class="info__row" data-if="direccion">
+              <dt data-i18n="reservas.direccion">Dirección</dt>
+              <dd><span data-cfg="direccion"></span><br>
+                <a data-cfg-href="mapa" target="_blank" rel="noopener" data-i18n="reservas.comoLlegar">Cómo llegar</a></dd>
+            </div>
+            <div class="info__row" data-if="telefono|email|whatsapp|instagram">
+              <dt data-i18n="reservas.contacto">Contacto</dt>
+              <dd class="info__links">
+                <a data-cfg-href="tel" data-cfg="telefono"></a>
+                <a data-cfg-href="mailto" data-cfg="email"></a>
+                <a data-cfg-href="whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+                <a data-cfg-href="instagram" target="_blank" rel="noopener">Instagram</a>
+              </dd>
+            </div>
+            <div class="info__row" data-if-text="reservas.horarioLineas">
+              <dt data-i18n="reservas.horario">Horario</dt>
+              <dd data-i18n-list="reservas.horarioLineas"></dd>
+            </div>
+          </dl>
+        </div>
+
+        <form class="booking reveal" id="booking" novalidate>
+          <div class="field field--full">
+            <label for="b-nombre" data-i18n="reservas.nombre">Nombre</label>
+            <input id="b-nombre" name="nombre" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="b-fecha" data-i18n="reservas.fecha">Fecha</label>
+            <input id="b-fecha" name="fecha" type="date" required>
+          </div>
+          <div class="field">
+            <label for="b-hora" data-i18n="reservas.hora">Hora</label>
+            <input id="b-hora" name="hora" type="time" step="900" required>
+          </div>
+          <div class="field">
+            <label for="b-personas" data-i18n="reservas.personas">Personas</label>
+            <input id="b-personas" name="personas" type="number" min="1" max="40" value="2" inputmode="numeric" required>
+          </div>
+          <div class="field">
+            <label for="b-tel" data-i18n="reservas.telefono">Teléfono</label>
+            <input id="b-tel" name="telefono" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field field--full">
+            <label for="b-notas" data-i18n="reservas.notas">Comentarios</label>
+            <textarea id="b-notas" name="notas" rows="3"></textarea>
+          </div>
+          <p class="booking__error" role="alert" hidden data-i18n="reservas.error"></p>
+          <div class="booking__actions">
+            <button type="submit" class="btn btn--terracota" data-channel="whatsapp" data-i18n="reservas.enviarWhatsapp">Enviar por WhatsApp</button>
+            <button type="submit" class="btn btn--ghost" data-channel="email" data-i18n="reservas.enviarEmail">Enviar por email</button>
+            <p class="booking__none" hidden data-i18n="reservas.sinCanal"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================ PIE ================================ -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-farol"/></svg>
+        <div>
+          <p class="footer__name">El Farolito</p>
+          <p data-i18n="footer.lema"></p>
+        </div>
+      </div>
+      <p class="footer__legal">© <span id="year"></span> El Farolito · <span data-i18n="footer.derechos"></span></p>
+    </div>
+    <div class="footer__stripe" aria-hidden="true"></div>
+  </footer>
+
+  <!-- Iconos -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-farol" viewBox="0 0 32 32">
+      <path d="M16 2v3M11 8h10l-1.5-3h-7zM10 8h12v2H10zM11 10l1 14h8l1-14M10 24h12v3H10zM13 27v3h6v-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M16 13c1.6 2 2.2 3.3 2.2 4.6a2.2 2.2 0 0 1-4.4 0c0-1.3.6-2.6 2.2-4.6z" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-fuego" viewBox="0 0 24 24">
+      <path d="M12 3c3 4 5 6.5 5 10a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.6 1 2.5 2 3 0-3 .5-5.5 1-8.5z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-pasta" viewBox="0 0 24 24">
+      <path d="M4 12h16a8 8 0 0 1-16 0zM7 12c0-4 2-7 3-8M11 12c0-4 1-6 2-8M15 12c0-3 1-5 3-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="icon-mesa" viewBox="0 0 24 24">
+      <path d="M3 9h18M5 9v11M19 9v11M8 9V6a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
