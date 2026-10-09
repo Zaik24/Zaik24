@@ -33,15 +33,9 @@
 /* ---------- Logo ---------- */
 .logo {
   justify-self: start;
-  color: var(--c-brand);
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
-  color: var(--c-ink);
-}
-.logo__mark {
-  width: 26px;
-  height: 26px;
+  color: var(--c-brand);
 }
 .logo__word {
   font-family: var(--f-display);
