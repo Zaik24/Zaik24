@@ -35,7 +35,7 @@
   justify-self: start;
   display: inline-flex;
   align-items: center;
-  color: var(--c-brand);
+  color: var(--c-ink); /* en el header, negro; en el footer (fondo oscuro) va en naranja: .logo--light */
 }
 .logo__word {
   font-family: var(--f-display);
