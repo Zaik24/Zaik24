@@ -32,9 +32,9 @@ window.SITE_CONFIG = {
   portada: {
     alturaPantallas: 4,
     escenas: [
-      [0.00, 0.30],
-      [0.36, 0.64],
-      [0.72, 1.00]
+      [0.00, 0.28],   // emplatado en la parrilla
+      [0.34, 0.56],   // plato terminado (se oculta antes del vapor blanco)
+      [0.72, 1.00]    // el plato llega a la mesa
     ]
   }
 };

@@ -26,12 +26,15 @@ Necesitas `ffmpeg` instalado.
 
 ```bash
 mkdir -p fuente
-cp /ruta/a/tu-video.mp4 fuente/portada.mp4      # la carpeta fuente/ no se sube a git
+cp /ruta/a/tu-video.mp4 fuente/portada.mp4      # original guardado en el repositorio
 ./herramientas/preparar-portada.sh fuente/portada.mp4
 ```
 
 El script genera la secuencia de escritorio (horizontal) y la de móvil (vertical 9:16, recorte central),
 el póster inicial, la foto final, dos MP4 optimizados para mover el video con el scroll y `assets/hero/frames.js`.
+Comando usado con el video actual (5 s, 1178×786, 121 fotogramas):
+`FRAMES_DESKTOP=121 FRAMES_MOBILE=121 MOBILE_W=442 MOBILE_H=786 MOBILE_CROP_X=0.45 QUALITY=78 ./herramientas/preparar-portada.sh fuente/portada.mp4`
+
 Opciones: `FRAMES_DESKTOP=180 QUALITY=75 MOBILE_CROP_X=0.4 ./herramientas/preparar-portada.sh …` (ver cabecera del script).
 
 **Sincronizar los textos con las escenas:** en `contenido/config.js` → `portada.escenas`, cada par `[inicio, fin]`
@@ -67,4 +70,4 @@ Si falta una foto, el sitio muestra un recuadro "Foto pendiente" en su lugar.
 
 ## 4. Publicar
 
-Sube la carpeta completa (sin `fuente/`) a cualquier hosting estático: GitHub Pages, Netlify, Cloudflare Pages o un servidor Apache/Nginx.
+Sube la carpeta completa (`fuente/` no hace falta en el servidor) a cualquier hosting estático: GitHub Pages, Netlify, Cloudflare Pages o un servidor Apache/Nginx.

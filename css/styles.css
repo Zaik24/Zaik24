@@ -187,6 +187,7 @@ p { margin: 0 0 1em; }
   background:
     linear-gradient(180deg, rgba(14, 38, 56, .55) 0%, rgba(14, 38, 56, 0) 28%),
     linear-gradient(0deg, rgba(14, 26, 34, .7) 0%, rgba(14, 26, 34, 0) 50%),
+    radial-gradient(70% 55% at 0% 100%, rgba(14, 26, 34, .55), transparent 70%),
     radial-gradient(120% 90% at 50% 50%, transparent 55%, rgba(10, 18, 24, .5) 100%);
 }
 .hero__grain {
