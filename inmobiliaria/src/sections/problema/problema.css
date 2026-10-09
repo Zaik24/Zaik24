@@ -6,8 +6,6 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-bottom: clamp(72px, 9vw, 130px);
-  border-top: 1px solid var(--c-line);
-  border-bottom: 1px solid var(--c-line);
 }
 .trust__item {
   display: grid;
@@ -17,9 +15,6 @@
   gap: 12px;
   padding: clamp(28px, 3.4vw, 48px) 16px;
   text-align: center;
-}
-.trust__item + .trust__item {
-  border-left: 1px solid var(--c-line);
 }
 .trust__value {
   font-family: var(--f-display);
@@ -45,27 +40,9 @@
   text-transform: uppercase;
   color: #5e5e5e;
 }
-.trust__logos {
-  display: flex;
-  justify-content: center;
-}
-.trust .client__logo--lg {
-  width: clamp(48px, 4.4vw, 64px);
-  height: clamp(48px, 4.4vw, 64px);
-  font-size: 0.85rem;
-  border: 3px solid var(--c-offwhite);
-  background: #e4ded4;
-}
-.trust .client__logo--lg + .client__logo--lg {
-  margin-left: -14px;
-}
 @media (max-width: 767px) {
   .trust {
     grid-template-columns: 1fr;
-  }
-  .trust__item + .trust__item {
-    border-left: 0;
-    border-top: 1px solid var(--c-line);
   }
   .trust__item {
     grid-template-rows: auto auto;
