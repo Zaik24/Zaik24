@@ -31,24 +31,35 @@ scripts/dev/                       Generadores del video demo y de los placehold
 
 ## Hero con video controlado por scroll
 
-La sección mide 300vh y contiene un bloque sticky de 100vh. El video **no** se reproduce con `video.currentTime`:
-se convierte a fotogramas WebP que se dibujan en un `<canvas>` según el progreso del scroll (fluido en Safari y móvil).
+La sección mide 400vh (`--hero-scroll` en `hero.css`) y contiene un bloque sticky de 100vh. El video **no** se reproduce
+con `video.currentTime`: se convierte a fotogramas WebP que se dibujan en un `<canvas>` según el scroll (fluido en Safari y móvil).
 
-1. Reemplaza `public/assets/hero.mp4` por el video definitivo (lo ideal: 4–6 s, 1920×1080, el edificio centrado).
-2. `npm run frames` (requiere **ffmpeg**) genera:
-   - `public/assets/frames/desktop/0001.webp…` — 24 fps, 1920 px de ancho
-   - `public/assets/frames/mobile/0001.webp…` — recorte vertical 9:16 centrado, 1080 px de alto
-   - `public/assets/frames/manifest.json`
-   Opciones: `FPS=24 QUALITY=72 MOBILE_CROP_X=0.5 npm run frames` (ver cabecera del script).
-3. Exporta un fotograma como `public/assets/hero-poster.jpg` y ejecuta `npm run images` (póster WebP, póster móvil y `og-image.jpg`).
+Video actual: `public/assets/hero.mp4` (16,27 s, 1920×1080, 30 fps). Etapas y sincronización (`src/sections/hero/hero.js` → `STAGES` y `TEXT`):
 
-Comportamiento:
-- Mientras cargan los fotogramas se ve el póster. La carga empieza cuando la página termina de cargar
-  (no compite con el LCP) y es progresiva: primero el primer y el último fotograma y luego subdivide, así el scrub responde enseguida.
-- Pantallas en retrato usan la secuencia móvil; el resto, la de escritorio.
-- Con `prefers-reduced-motion: reduce`, ahorro de datos o 2G: solo el póster estático, sin scroll extendido (en reduce).
+| Scroll del hero | Video | Escena | Texto |
+|---|---|---|---|
+| 0–15 % | 0–0,75 s | Terreno vacío | "STATEVIEW" + subtítulo |
+| 15–70 % | 0,75–11 s | Construcción | El texto se desvanece y sube 20 px (15–25 %) |
+| 70–85 % | 11–13,5 s | Casa terminada | Aparece "Ver proyectos →" (70–74 %) |
+| 85–100 % | 13,5–16,27 s | La cámara sube a las nubes | El botón se va (85–89 %); fundido a #F6F5F2 (92–100 %) |
 
-> El `hero.mp4` actual es un **video demo sintético** (`npm run demo:video`, requiere Python + numpy + Pillow).
+El scroll se mapea **por tramos** al tiempo del video: cada etapa ocupa exactamente su tramo de scroll aunque dure distinto en el video.
+Todas las transiciones son GSAP + ScrollTrigger (opacity/transform), con el mismo suavizado que el video, y se revierten al subir.
+
+Para cambiar el video:
+1. Reemplaza `public/assets/hero.mp4`.
+2. `npm run frames` (requiere **ffmpeg**: `brew install ffmpeg` · `sudo apt install ffmpeg` · `winget install ffmpeg`). Genera:
+   - `public/assets/frames/desktop/` — 24 fps, 1920 px · `public/assets/frames/mobile/` — recorte 9:16 sobre la casa, 1080 px de alto
+   - `public/assets/frames/manifest.json` (cantidad, fps, duración)
+   - `hero-start.*` (primer fotograma: se ve mientras cargan los demás), `hero-poster.jpg` (último fotograma) y `og-image.jpg`
+   Opciones: `FPS=15 QUALITY=62 MOBILE_CROP_X=0.57 OG_TIME=12 npm run frames`.
+3. Ajusta los tiempos de `STAGES` en `hero.js` a las escenas del nuevo video.
+
+Peso con el video actual: 390 fotogramas ≈ 33 MB (escritorio) / 11 MB (móvil). Se descargan recién con la primera interacción
+(o a los 4 s), en orden progresivo (primero, último y luego mitades), así no afectan la carga inicial.
+`FPS=15` reduce el peso cerca de un 40 % con un scrub algo menos fino.
+
+Con `prefers-reduced-motion: reduce`, ahorro de datos o 2G: primer fotograma fijo con todo el texto visible.
 
 ## Fotos
 

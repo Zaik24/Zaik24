@@ -2,11 +2,11 @@
   <div class="hero__sticky">
     <div class="hero__media" aria-hidden="true">
       <picture>
-        <source media="(max-width: 767px)" srcset="/assets/hero-poster-mobile.webp" type="image/webp" />
-        <source srcset="/assets/hero-poster.webp" type="image/webp" />
+        <source media="(max-width: 767px)" srcset="/assets/hero-start-mobile.webp" type="image/webp" />
+        <source srcset="/assets/hero-start.webp" type="image/webp" />
         <img
           class="hero__poster"
-          src="/assets/hero-poster.jpg"
+          src="/assets/hero-start.jpg"
           alt=""
           width="1920"
           height="1080"
@@ -17,24 +17,23 @@
       <canvas class="hero__canvas" data-hero-canvas></canvas>
     </div>
 
-    <div class="hero__content container" data-hero-content>
-      <p class="hero__eyebrow" data-hero-intro>Renderizado 3D para terrenos · Cobertura mundial</p>
-      <h1 class="hero__title" id="hero-title" data-hero-intro>Un terreno vacío no&nbsp;vende.</h1>
-      <p class="hero__lead" data-hero-intro>
-        <span class="hero__lead-strong">El sueño de tu comprador, sí.</span>
-        <span class="hero__lead-soft">Reels con guion, voz y edición, listos en 48&nbsp;horas.</span>
-      </p>
-      <div class="hero__actions" data-hero-intro>
-        <a
-          class="btn btn--dark btn--lg"
-          href="https://wa.me/%VITE_WHATSAPP%?text=Hola,%20quiero%20ver%20cómo%20queda%20mi%20propiedad%20en%20video"
-          target="_blank"
-          rel="noopener"
-        >
-          Solicitar propuesta <span class="btn__arrow" aria-hidden="true">→</span>
-        </a>
-        <a class="btn btn--glass btn--lg" href="#clientes">Ver ejemplos <span class="btn__arrow" aria-hidden="true">↓</span></a>
+    <!-- Al final del scroll, las nubes se funden con el fondo de la sección siguiente -->
+    <div class="hero__fade" aria-hidden="true" data-hero-fade></div>
+
+    <div class="hero__content container">
+      <!-- 0–15%: titular y subtítulo -->
+      <div class="hero__intro" data-hero-text>
+        <h1 class="hero__title" id="hero-title" data-hero-intro>%VITE_BRAND_NAME%</h1>
+        <p class="hero__lead" data-hero-intro>
+          <span class="hero__lead-strong">Un terreno vacío no vende.</span>
+          <span class="hero__lead-accent">El sueño de tu comprador, sí.</span>
+        </p>
       </div>
+    </div>
+
+    <!-- 70–85%: casa terminada -->
+    <div class="hero__cta" data-hero-cta>
+      <a class="btn btn--light btn--lg" href="#clientes">Ver proyectos <span class="btn__arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
