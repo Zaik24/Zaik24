@@ -164,7 +164,7 @@
   color: var(--c-ink);
 }
 .hero__lead-soft {
-  color: #4f5660; /* gris levemente azulado */
+  color: #3d444e; /* gris carbón: segundo tono, con más presencia */
 }
 @media (min-width: 768px) {
   .hero__lead {
