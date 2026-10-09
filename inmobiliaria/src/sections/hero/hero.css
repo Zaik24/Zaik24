@@ -80,10 +80,10 @@
   letter-spacing: -0.055em;
   padding: 0 0.04em 0.06em; /* que el recorte no corte la "w" ni descendentes */
   color: var(--c-brand); /* respaldo si el navegador no recorta fondos en texto */
-  /* velo cálido sobre la foto para que las letras contrasten con las nubes */
-  background:
-    linear-gradient(rgba(45, 22, 6, 0.28), rgba(45, 22, 6, 0.28)),
-    var(--house) 72% 74% / 135% auto no-repeat;
+  /* imagen en el HTML (velo cálido + casa terminada) para que la URL se resuelva respecto de la página */
+  background-repeat: no-repeat;
+  background-size: auto, 135% auto;
+  background-position: center, 72% 74%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
