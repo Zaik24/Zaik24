@@ -33,6 +33,7 @@
 /* ---------- Logo ---------- */
 .logo {
   justify-self: start;
+  color: var(--c-brand);
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -50,7 +51,7 @@
   line-height: 1;
 }
 .logo--light {
-  color: #fff;
+  color: var(--c-brand);
 }
 
 /* ---------- Navegación (escritorio) ---------- */
@@ -309,7 +310,6 @@ body.menu-open {
 }
 
 /* Sobre el video (arriba de todo, sin scroll): texto en blanco */
-.site-header:not(.is-scrolled):not(.is-menu-open) .logo,
 .site-header:not(.is-scrolled):not(.is-menu-open) .pill-beta {
   color: #fff;
 }

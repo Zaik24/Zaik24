@@ -7,7 +7,8 @@
   --c-muted: #8a8a8a; /* secundario decorativo / texto grande */
   --c-line: rgba(17, 17, 17, 0.1);
   --c-focus: #2f6fed;
-  --c-accent: #ffc56e; /* dorado del atardecer del video: solo sobre imagen */
+  --c-brand: #f97316; /* naranja StateView: logo y acento */
+  --c-accent: var(--c-brand);
 
   /* Tipografía */
   --f-display: 'Inter Tight', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;

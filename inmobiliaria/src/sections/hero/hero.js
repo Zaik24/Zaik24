@@ -4,19 +4,19 @@ import { FramePlayer } from './frame-player.js';
 const MANIFEST_URL = '/assets/frames/manifest.json';
 
 /**
- * Etapas del video (stateviewheader.mp4, 16,27 s) y en qué punto del scroll del hero ocurren.
+ * Etapas del video (HEADER_STATEVIEW.mp4, 16,14 s, 2560×1440) y en qué punto del scroll del hero ocurren.
  * El scroll se mapea por tramos al tiempo del video, así cada etapa coincide con su texto:
- *   0–15 %  terreno vacío (0–0,75 s)          → titular y subtítulo
- *  15–70 %  construcción (0,75–11 s)          → el texto se desvanece y sube 20 px
- *  70–85 %  casa terminada (11–13,5 s)        → botón "Ver proyectos"
- *  85–100 % la cámara sube a las nubes (13,5 s–fin) → el botón se va y todo se funde con #F6F5F2
+ *   0–15 %  terreno vacío (0–0,9 s)           → logo y subtítulo
+ *  15–70 %  construcción (0,9–11 s)           → el texto se desvanece y sube 20 px
+ *  70–85 %  casa terminada (11–12,6 s)        → botón "Ver proyectos"
+ *  85–100 % la cámara sube a las nubes (12,6 s–fin) → el botón se va y todo se funde con #F6F5F2
  * Para otro video, ajusta los tiempos (segundos). `null` = final del video.
  */
 export const STAGES = [
   { scroll: 0, time: 0 },
-  { scroll: 0.15, time: 0.75 },
+  { scroll: 0.15, time: 0.9 },
   { scroll: 0.7, time: 11.0 },
-  { scroll: 0.85, time: 13.5 },
+  { scroll: 0.85, time: 12.6 },
   { scroll: 1, time: null },
 ];
 
@@ -47,7 +47,7 @@ function pickVariant(manifest) {
   const portrait = window.innerWidth / window.innerHeight < 0.8;
   return portrait && manifest.mobile
     ? { ...manifest.mobile, focusX: 0.5 }
-    : { ...manifest.desktop, focusX: 0.57 };
+    : { ...manifest.desktop, focusX: 0.6 };
 }
 
 /**
@@ -77,6 +77,7 @@ function initHeroText(hero) {
   const at = ([start]) => start;
   const len = ([start, end]) => end - start;
   const intro = hero.querySelector('[data-hero-text]');
+  const scrim = hero.querySelector('[data-hero-scrim]');
   const cta = hero.querySelector('[data-hero-cta]');
   const fade = hero.querySelector('[data-hero-fade]');
 
@@ -87,6 +88,7 @@ function initHeroText(hero) {
       scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom bottom', scrub: SCRUB },
     })
     .to(intro, { opacity: 0, y: -20, ease: 'power1.in', duration: len(TEXT.introOut) }, at(TEXT.introOut))
+    .to(scrim, { opacity: 0, duration: len(TEXT.introOut) }, at(TEXT.introOut))
     .fromTo(cta, { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, ease: 'power2.out', duration: len(TEXT.ctaIn) }, at(TEXT.ctaIn))
     .to(cta, { autoAlpha: 0, y: -12, ease: 'power1.in', duration: len(TEXT.ctaOut) }, at(TEXT.ctaOut))
     .to(fade, { opacity: 1, ease: 'power1.inOut', duration: len(TEXT.fadeToPage) }, at(TEXT.fadeToPage))

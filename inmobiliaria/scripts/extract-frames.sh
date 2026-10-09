@@ -8,7 +8,7 @@
 #   FPS=24             fotogramas por segundo a extraer (15 reduce el peso ~40%)
 #   DESKTOP_W=1920     ancho de la secuencia de escritorio
 #   MOBILE_H=1080      alto de la secuencia móvil (recorte vertical 9:16)
-#   MOBILE_CROP_X=0.57 posición del recorte móvil (0 = izquierda, 1 = derecha); 0.57 centra la casa
+#   MOBILE_CROP_X=0.63 posición del recorte móvil (0 = izquierda, 1 = derecha); 0.63 centra la casa
 #   QUALITY=62         calidad WebP (0-100)
 #   OG_TIME=12         segundo del video usado para la imagen Open Graph (casa terminada)
 #
@@ -24,7 +24,7 @@ OUT="public/assets/frames"
 FPS="${FPS:-24}"
 DESKTOP_W="${DESKTOP_W:-1920}"
 MOBILE_H="${MOBILE_H:-1080}"
-MOBILE_CROP_X="${MOBILE_CROP_X:-0.57}"
+MOBILE_CROP_X="${MOBILE_CROP_X:-0.63}"
 QUALITY="${QUALITY:-62}"
 OG_TIME="${OG_TIME:-12}"
 

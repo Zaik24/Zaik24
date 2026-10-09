@@ -29,7 +29,7 @@
 }
 .hero__poster {
   object-fit: cover;
-  object-position: 57% 50%;
+  object-position: 60% 50%;
 }
 @media (max-width: 767px) {
   .hero__poster {
@@ -43,6 +43,15 @@
 .hero.is-ready .hero__canvas {
   opacity: 1;
 }
+.hero__scrim {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 70%;
+  background:
+    radial-gradient(70% 60% at 50% 22%, rgba(6, 18, 44, 0.42), transparent 75%),
+    linear-gradient(180deg, rgba(6, 18, 44, 0.3), transparent);
+  pointer-events: none;
+}
 .hero__fade {
   background: var(--c-offwhite);
   opacity: 0;
@@ -53,7 +62,7 @@
 .hero__content {
   position: relative;
   z-index: 1;
-  padding-top: calc(var(--header-h) + clamp(40px, 11vh, 150px));
+  padding-top: calc(var(--header-h) + clamp(24px, 5vh, 80px));
 }
 .hero__intro {
   display: flex;
@@ -68,11 +77,11 @@
   font-size: clamp(3.4rem, 12.5vw, 11.5rem);
   font-weight: 800;
   line-height: 0.9;
-  letter-spacing: var(--tracking-tight);
-  text-transform: uppercase;
+  letter-spacing: -0.04em;
+  color: var(--c-brand);
   text-shadow:
-    0 1px 2px rgba(10, 25, 55, 0.18),
-    0 10px 40px rgba(10, 30, 70, 0.35);
+    0 1px 2px rgba(10, 25, 55, 0.22),
+    0 10px 40px rgba(10, 30, 70, 0.4);
 }
 .hero__lead {
   margin-top: clamp(16px, 2.6vh, 32px);
@@ -83,14 +92,19 @@
   letter-spacing: -0.02em;
   text-wrap: balance;
   text-shadow:
-    0 1px 2px rgba(10, 25, 55, 0.25),
-    0 6px 24px rgba(10, 30, 70, 0.35);
+    0 1px 2px rgba(6, 18, 44, 0.45),
+    0 4px 18px rgba(6, 18, 44, 0.5);
 }
 .hero__lead-strong {
   color: #fff;
 }
 .hero__lead-accent {
   color: var(--c-accent);
+  font-weight: 700;
+  text-shadow:
+    0 1px 1px rgba(6, 18, 44, 0.6),
+    0 0 14px rgba(6, 18, 44, 0.55),
+    0 4px 22px rgba(6, 18, 44, 0.5);
 }
 @media (min-width: 768px) {
   .hero__lead {
