@@ -308,24 +308,3 @@ body.menu-open {
   background: #fff;
   backdrop-filter: none;
 }
-
-/* Sobre el video (arriba de todo, sin scroll): texto en blanco */
-.site-header:not(.is-scrolled):not(.is-menu-open) .pill-beta {
-  color: #fff;
-}
-.site-header:not(.is-scrolled):not(.is-menu-open) .pill-beta {
-  border-color: rgba(255, 255, 255, 0.7);
-}
-.site-header:not(.is-scrolled):not(.is-menu-open) .burger span {
-  background: #fff;
-}
-.site-header:not(.is-scrolled):not(.is-menu-open) .site-header__actions .btn {
-  background: #fff;
-  color: var(--c-ink);
-}
-@media (min-width: 1024px) {
-  .site-header:not(.is-scrolled) .nav__link {
-    color: #fff;
-    text-shadow: 0 1px 12px rgba(10, 30, 70, 0.35);
-  }
-}
