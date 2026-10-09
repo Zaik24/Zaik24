@@ -92,7 +92,7 @@
 .hero__outro-sub {
   margin-top: clamp(4px, 1vh, 14px);
   font-family: var(--f-display);
-  font-size: clamp(1.4rem, 4.4vw, 4.4rem);
+  font-size: clamp(2.2rem, 7.5vw, 7.5rem);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;

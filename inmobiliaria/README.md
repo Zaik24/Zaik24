@@ -43,7 +43,7 @@ Video actual: `public/assets/hero.mp4` (HEADER_STATEVIEW.mp4: 16,14 s, 2560×144
 | 0–15 % | 0–0,9 s | Terreno vacío | Logo "StateView" (naranja #F97316) + subtítulo |
 | 15–70 % | 0,9–11 s | Construcción | El texto se desvanece y sube 20 px (15–25 %) |
 | 70–85 % | 11–12,6 s | Casa terminada | Aparece "Ver proyectos →" (70–74 %) |
-| 85–100 % | 12,6–16,14 s | La cámara sube a las nubes | El botón se va (85–89 %); entre las nubes aparece "StateView" con la foto de la casa dentro de las letras + "AI Real Estate Video Studio" (93,5–98 %); el borde inferior se funde con #F6F5F2 (93–100 %) |
+| 85–100 % | 12,6–16,14 s | La cámara sube a las nubes | El botón se va (85–89 %); entre las nubes aparece "StateView" con la foto de la casa dentro de las letras + "Real Estate" (93,5–98 %); el borde inferior se funde con #F6F5F2 (93–100 %) |
 
 El scroll se mapea **por tramos** al tiempo del video: cada etapa ocupa exactamente su tramo de scroll aunque dure distinto en el video.
 Todas las transiciones son GSAP + ScrollTrigger (opacity/transform), con el mismo suavizado que el video, y se revierten al subir.
