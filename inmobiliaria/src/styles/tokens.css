@@ -1,0 +1,40 @@
+:root {
+  /* Color */
+  --c-offwhite: #f6f5f2;
+  --c-white: #ffffff;
+  --c-ink: #111111;
+  --c-ink-2: #4a4a4a; /* párrafos: contraste AA sobre blanco y off-white */
+  --c-muted: #8a8a8a; /* secundario decorativo / texto grande */
+  --c-line: rgba(17, 17, 17, 0.1);
+  --c-focus: #2f6fed;
+
+  /* Tipografía */
+  --f-display: 'Inter Tight', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --tracking-tight: -0.03em; /* titulares grandes */
+  --tracking-snug: -0.02em; /* titulares medianos y párrafo destacado */
+
+  --fs-hero: clamp(2.9rem, 7.2vw, 8.75rem);
+  --fs-h2: clamp(2.1rem, 3.6vw + 0.6rem, 3.6rem);
+  --fs-h3: clamp(1.6rem, 1.9vw + 0.75rem, 2.4rem);
+  --fs-statement: clamp(1.55rem, 1.6vw + 0.9rem, 2.4rem);
+  --fs-body: 1rem;
+  --fs-body-lg: clamp(1rem, 0.25vw + 0.95rem, 1.125rem);
+
+  /* Layout */
+  --max: 1440px;
+  --gutter: clamp(16px, 2.2vw, 32px);
+  --col-gap: clamp(12px, 1.2vw, 16px);
+  --section-y: clamp(72px, 9vw, 140px);
+  --radius: 16px;
+  --header-h: 80px;
+
+  /* Movimiento */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --header-h: 68px;
+  }
+}

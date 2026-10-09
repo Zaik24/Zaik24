@@ -1,0 +1,255 @@
+/* ---------- Reset mínimo ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: var(--header-h);
+}
+body {
+  margin: 0;
+  background: var(--c-white);
+  color: var(--c-ink);
+  font-family: var(--f-body);
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+img,
+picture,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+p,
+figure,
+ul {
+  margin: 0;
+}
+ul[role='list'] {
+  list-style: none;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+address {
+  font-style: normal;
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--c-ink);
+  color: #fff;
+  transform: translateY(-160%);
+  transition: transform 0.2s var(--ease);
+}
+.skip-link:focus {
+  transform: none;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section {
+  padding-block: var(--section-y);
+}
+.section--white {
+  background: var(--c-white);
+}
+.section--offwhite {
+  background: var(--c-offwhite);
+}
+
+/* Grilla de 12 columnas reutilizable */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--col-gap);
+}
+
+/* ---------- Tipografía ---------- */
+.h2,
+.h3,
+.statement,
+.hero__title {
+  font-family: var(--f-display);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 700;
+  text-wrap: balance;
+}
+.h2 {
+  letter-spacing: var(--tracking-snug);
+  font-size: var(--fs-h2);
+  line-height: 1.04;
+}
+.h3 {
+  letter-spacing: var(--tracking-snug);
+  font-size: var(--fs-h3);
+  line-height: 1.12;
+}
+.statement {
+  letter-spacing: var(--tracking-snug);
+  font-size: var(--fs-statement);
+  line-height: 1.2;
+  text-wrap: pretty;
+}
+.body-lg {
+  font-size: var(--fs-body-lg);
+  line-height: 1.75;
+  color: var(--c-ink-2);
+  text-wrap: pretty;
+}
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6b6259;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  --pad-y: 0.9rem;
+  --pad-x: 1.65rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: var(--pad-y) var(--pad-x);
+  border-radius: 999px;
+  font-family: var(--f-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition:
+    background-color 0.3s var(--ease),
+    color 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+.btn__arrow {
+  display: inline-block;
+  transition: transform 0.35s var(--ease);
+}
+.btn:hover .btn__arrow,
+.link-underline:hover .btn__arrow,
+.card__link:hover .btn__arrow {
+  transform: translateX(4px);
+}
+.btn--dark {
+  background: var(--c-ink);
+  color: #fff;
+}
+.btn--dark:hover {
+  background: #2a2a2a;
+}
+.btn--light {
+  background: #fff;
+  color: var(--c-ink);
+}
+.btn--light:hover {
+  background: var(--c-offwhite);
+}
+.btn--sm {
+  --pad-y: 0.7rem;
+  --pad-x: 1.3rem;
+  font-size: 0.9rem;
+}
+.btn--lg {
+  --pad-y: 1.1rem;
+  --pad-x: 2rem;
+  font-size: 1.05rem;
+}
+
+.link-underline {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+.link-underline .btn__arrow {
+  margin-left: 0.6em;
+}
+
+/* ---------- Media ---------- */
+.media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: #e9e3da;
+  isolation: isolate;
+}
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease);
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--c-line);
+  margin: clamp(48px, 6vw, 80px) 0;
+}
+
+/* ---------- Animaciones de entrada ----------
+   El estado inicial lo fija JS (GSAP) solo si hay JS y no se pidió reducir movimiento,
+   así el contenido nunca queda oculto. */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

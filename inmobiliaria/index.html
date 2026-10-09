@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>%VITE_BRAND_NAME% — Inmobiliaria premium | Comprar, vender y alquilar</title>
+    <meta
+      name="description"
+      content="%VITE_BRAND_NAME% es una inmobiliaria premium con agentes certificados que te acompañan a comprar, vender o alquilar con claridad, datos y criterio."
+    />
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+    <meta name="theme-color" content="#F6F5F2" />
+    <meta name="color-scheme" content="light" />
+
+    <!-- Open Graph / redes -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="%VITE_BRAND_LEGAL%" />
+    <meta property="og:title" content="%VITE_BRAND_NAME% — Encuentra lo que te mueve" />
+    <meta
+      property="og:description"
+      content="Agentes expertos. Acompañamiento real. Un camino claro hacia tu próximo lugar."
+    />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:image" content="%VITE_SITE_URL%/assets/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Ático de ladrillo con terraza ajardinada entre nubes al atardecer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="%VITE_BRAND_NAME% — Encuentra lo que te mueve" />
+    <meta name="twitter:description" content="Agentes expertos. Acompañamiento real. Un camino claro hacia tu próximo lugar." />
+    <meta name="twitter:image" content="%VITE_SITE_URL%/assets/og-image.jpg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Carga no bloqueante (display=swap): el texto se pinta de inmediato con la fuente del sistema -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600&display=swap"
+      />
+    </noscript>
+
+    <!-- LCP: póster del hero -->
+    <link rel="preload" as="image" href="/assets/hero-poster-mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/hero-poster.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "%VITE_BRAND_LEGAL%",
+        "url": "%VITE_SITE_URL%/",
+        "image": "%VITE_SITE_URL%/assets/og-image.jpg",
+        "email": "hola@alba.example",
+        "telephone": "+00 000 000 000"
+      }
+    </script>
+    <script>
+      document.documentElement.classList.add('js');
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- @include sections/header/header.html -->
+
+    <main id="contenido">
+      <!-- @include sections/hero/hero.html -->
+      <!-- @include sections/manifiesto/manifiesto.html -->
+      <!-- @include sections/agentes/agentes.html -->
+      <!-- @include sections/ayuda/ayuda.html -->
+      <!-- @include sections/servicios/servicios.html -->
+    </main>
+
+    <!-- @include sections/footer/footer.html -->
+  </body>
+</html>

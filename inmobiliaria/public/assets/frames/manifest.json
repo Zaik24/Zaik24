@@ -1,0 +1,7 @@
+{
+  "count": 120,
+  "fps": 24,
+  "pad": 4,
+  "desktop": { "path": "/assets/frames/desktop/", "width": 1920, "height": 1080 },
+  "mobile": { "path": "/assets/frames/mobile/", "width": 608, "height": 1080 }
+}

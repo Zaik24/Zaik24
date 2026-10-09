@@ -1,0 +1,31 @@
+<section class="hero" aria-labelledby="hero-title" data-hero>
+  <div class="hero__sticky">
+    <div class="hero__media" aria-hidden="true">
+      <picture>
+        <source media="(max-width: 767px)" srcset="/assets/hero-poster-mobile.webp" type="image/webp" />
+        <source srcset="/assets/hero-poster.webp" type="image/webp" />
+        <img
+          class="hero__poster"
+          src="/assets/hero-poster.jpg"
+          alt=""
+          width="1920"
+          height="1080"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
+      <canvas class="hero__canvas" data-hero-canvas></canvas>
+    </div>
+
+    <div class="hero__content container" data-hero-content>
+      <h1 class="hero__title" id="hero-title" data-hero-intro>Encuentra lo que te&nbsp;mueve</h1>
+      <p class="hero__lead" data-hero-intro>
+        <span class="hero__lead-strong">Agentes expertos. Acompañamiento real.</span>
+        <span class="hero__lead-soft">Un camino claro hacia lo que sigue.</span>
+      </p>
+      <a class="btn btn--dark btn--lg" href="#ayuda" data-hero-intro>
+        Ver propiedades <span class="btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>

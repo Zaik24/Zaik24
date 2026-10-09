@@ -1,0 +1,76 @@
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="logo" href="/" aria-label="%VITE_BRAND_NAME% — inicio">
+      <svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M5 21a11 11 0 0 1 22 0Z" fill="currentColor" />
+        <rect x="2" y="24" width="28" height="3" rx="1.5" fill="currentColor" />
+      </svg>
+      <span class="logo__word">%VITE_BRAND_NAME%</span>
+    </a>
+
+    <nav class="nav" id="nav-principal" aria-label="Principal" data-nav>
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="#ayuda">Buscar</a></li>
+        <li class="nav__item"><a class="nav__link" href="#manifiesto">Barrios</a></li>
+        <li class="nav__item"><a class="nav__link" href="#agentes">Agentes</a></li>
+
+        <li class="nav__item nav__item--has-menu" data-dropdown>
+          <button class="nav__link nav__toggle" type="button" aria-expanded="false" aria-controls="menu-unete">
+            Únete <svg class="nav__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" /></svg>
+          </button>
+          <ul class="dropdown" id="menu-unete">
+            <li><a href="#agentes"><strong>Como agente</strong><span>Equity, formación y respaldo real</span></a></li>
+            <li><a href="#"><strong>Como aliado</strong><span>Bancos, notarías y constructoras</span></a></li>
+            <li><a href="#"><strong>Trabaja con nosotros</strong><span>Vacantes en operaciones y marketing</span></a></li>
+          </ul>
+        </li>
+
+        <li class="nav__item nav__item--has-menu" data-dropdown>
+          <button class="nav__link nav__toggle" type="button" aria-expanded="false" aria-controls="menu-tramites">
+            Trámites <svg class="nav__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" /></svg>
+          </button>
+          <ul class="dropdown" id="menu-tramites">
+            <li><a href="#"><strong>Documentos para comprar</strong><span>Checklist paso a paso</span></a></li>
+            <li><a href="#"><strong>Documentos para vender</strong><span>Lo que te pedirá el notario</span></a></li>
+            <li><a href="#"><strong>Contratos de alquiler</strong><span>Modelos revisados por abogados</span></a></li>
+            <li><a href="#"><strong>Firma y escrituración</strong><span>Qué pasa el día del cierre</span></a></li>
+          </ul>
+        </li>
+
+        <li class="nav__item nav__item--has-menu" data-dropdown>
+          <button class="nav__link nav__toggle" type="button" aria-expanded="false" aria-controls="menu-recursos">
+            Recursos <svg class="nav__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" /></svg>
+          </button>
+          <ul class="dropdown" id="menu-recursos">
+            <li><a href="#"><strong>Calculadora hipotecaria</strong><span>Simula tu cuota en segundos</span></a></li>
+            <li><a href="#"><strong>Guía de barrios</strong><span>Precios, colegios y ambiente</span></a></li>
+            <li><a href="#"><strong>Diario %VITE_BRAND_NAME%</strong><span>Mercado, tendencias y consejos</span></a></li>
+            <li><a href="#"><strong>Preguntas frecuentes</strong><span>Respuestas claras, sin letra chica</span></a></li>
+          </ul>
+        </li>
+
+        <li class="nav__item nav__item--has-menu" data-dropdown>
+          <button class="nav__link nav__toggle" type="button" aria-expanded="false" aria-controls="menu-nosotros">
+            Nosotros <svg class="nav__chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" /></svg>
+          </button>
+          <ul class="dropdown dropdown--end" id="menu-nosotros">
+            <li><a href="#manifiesto"><strong>Nuestra historia</strong><span>Por qué existimos</span></a></li>
+            <li><a href="#agentes"><strong>Equipo</strong><span>Las personas detrás de cada cierre</span></a></li>
+            <li><a href="#"><strong>Prensa</strong><span>Notas y recursos de marca</span></a></li>
+            <li><a href="#contacto"><strong>Contacto</strong><span>Hablemos de tu próximo paso</span></a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <a class="btn btn--dark nav__signin-mobile" href="#">Ingresar <span class="btn__arrow" aria-hidden="true">→</span></a>
+    </nav>
+
+    <div class="site-header__actions">
+      <span class="pill-beta">Beta</span>
+      <a class="btn btn--dark btn--sm" href="#">Ingresar <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menú" data-burger>
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
