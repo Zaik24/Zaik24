@@ -1,0 +1,43 @@
+.pagos__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 40px var(--col-gap);
+  align-items: end;
+}
+.pagos__intro {
+  grid-column: 1 / 6;
+}
+.pagos__intro .h2 {
+  margin-top: 16px;
+}
+.pagos__intro .body-lg {
+  margin-top: 20px;
+}
+.pagos__list {
+  grid-column: 7 / 13;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.chip {
+  padding: 0.7rem 1.2rem;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  border-radius: 999px;
+  background: var(--c-white);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.pagos__note {
+  margin-top: 20px;
+  font-size: 0.875rem;
+  color: #5e5e5e;
+}
+@media (max-width: 1023px) {
+  .pagos__intro,
+  .pagos__list {
+    grid-column: 1 / -1;
+  }
+}

@@ -47,7 +47,6 @@
   font-weight: 800;
   font-size: 1.6rem;
   letter-spacing: -0.04em;
-  text-transform: uppercase;
   line-height: 1;
 }
 .logo--light {
@@ -167,8 +166,7 @@
   border-radius: 999px;
   font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   line-height: 1.4;
 }
 

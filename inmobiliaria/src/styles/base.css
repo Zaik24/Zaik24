@@ -184,6 +184,24 @@ address {
 .btn--light:hover {
   background: var(--c-offwhite);
 }
+.btn--outline {
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  color: var(--c-ink);
+}
+.btn--outline:hover {
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+  color: #fff;
+}
+.btn--glass {
+  border: 1px solid rgba(17, 17, 17, 0.18);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  color: var(--c-ink);
+}
+.btn--glass:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
 .btn--sm {
   --pad-y: 0.7rem;
   --pad-x: 1.3rem;

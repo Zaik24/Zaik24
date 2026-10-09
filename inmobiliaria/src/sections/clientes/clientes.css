@@ -1,0 +1,177 @@
+.clientes__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: clamp(32px, 3.5vw, 52px);
+}
+.clientes__head .h2 {
+  margin-top: 16px;
+  max-width: 18ch;
+}
+.clientes__sub {
+  margin-top: 16px;
+  max-width: 52ch;
+}
+
+.carousel-nav {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.carousel-nav__btn {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(17, 17, 17, 0.2);
+  border-radius: 999px;
+  font-size: 1.1rem;
+  transition:
+    background-color 0.25s var(--ease),
+    color 0.25s var(--ease),
+    opacity 0.25s var(--ease);
+}
+.carousel-nav__btn:hover:not(:disabled) {
+  background: var(--c-ink);
+  color: #fff;
+}
+.carousel-nav__btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.carousel__track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: clamp(220px, 21vw, 290px);
+  gap: var(--col-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+.reel-card {
+  scroll-snap-align: start;
+}
+.reel-card__body {
+  padding-top: 18px;
+}
+.client {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--c-ink-2);
+  line-height: 1.3;
+}
+.client__logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e7e3dc;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.client__logo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reel-card__title {
+  margin-top: 12px;
+  font-family: var(--f-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+.reel-card__ig {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 0.875rem;
+  color: #5e5e5e;
+  text-decoration: underline;
+  text-decoration-color: rgba(17, 17, 17, 0.25);
+  text-underline-offset: 3px;
+}
+.reel-card__ig:hover {
+  color: var(--c-ink);
+}
+
+@media (max-width: 767px) {
+  .clientes__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .carousel__track {
+    grid-auto-columns: 72%;
+  }
+}
+
+/* ---------- Reel de YouTube (fachada liviana: el iframe se crea al hacer clic) ---------- */
+.reel {
+  position: relative;
+  display: block;
+  aspect-ratio: 9 / 16;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background:
+    radial-gradient(120% 80% at 20% 100%, rgba(246, 172, 122, 0.55), transparent 60%),
+    linear-gradient(180deg, #7aa3cf, #d9c2b4);
+  isolation: isolate;
+}
+.reel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease);
+}
+.reel:hover img {
+  transform: scale(1.03);
+}
+.reel__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.35s var(--ease);
+}
+.reel__play::after {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 22px;
+  border-left: 16px solid var(--c-ink);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.reel:hover .reel__play {
+  transform: scale(1.06);
+}
+.reel iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

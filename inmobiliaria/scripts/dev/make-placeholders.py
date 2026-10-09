@@ -16,17 +16,10 @@ FONT = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 # nombre: (ancho, alto, escena, semilla)
 IMAGES = {
-    "living-sunset.jpg": (1200, 1200, "interior", 1),
-    "barrio-aereo.jpg": (1800, 820, "aereo", 2),
-    "casa-piscina.jpg": (1400, 900, "piscina", 3),
-    "cocina.jpg": (1100, 900, "cocina", 4),
-    "agente.jpg": (1200, 1500, "agente", 5),
-    "comprar.jpg": (1400, 1050, "interior", 6),
-    "vender.jpg": (1400, 1050, "casa", 7),
-    "alquilar.jpg": (1400, 1050, "torre", 8),
-    "hipoteca.jpg": (1400, 1050, "escritorio", 9),
-    "administracion.jpg": (1400, 1050, "torre", 10),
-    "construccion.jpg": (1400, 1050, "obra", 11),
+    "render-casa-campo.jpg": (1200, 1200, "casa", 1),
+    "lotes-aereo.jpg": (1800, 820, "aereo", 2),
+    "terreno-vacio.jpg": (1400, 900, "terreno", 3),
+    "reel-movil.jpg": (1100, 900, "movil", 4),
 }
 
 
@@ -146,6 +139,30 @@ def scene(w, h, kind, seed):
         d.rectangle((cx, h * 0.1, cx + 16, hz), fill=(200, 120, 40, 255))
         d.rectangle((w * 0.12, h * 0.1, w * 0.9, h * 0.1 + 12), fill=(200, 120, 40, 255))
         d.line((w * 0.8, h * 0.11, w * 0.8, h * 0.34), fill=(40, 40, 40, 255), width=3)
+    elif kind == "terreno":
+        d.rectangle((0, hz, w, h), fill=(150, 128, 92, 255))
+        for k in range(160):
+            x, y = r.random() * w, hz + r.random() * (h - hz)
+            d.line((x, y, x + 6, y - 10 - r.random() * 10), fill=(110, 120, 70, 255), width=2)
+        for x0, x1 in ((w * 0.2, w * 0.8),):
+            for x, y in ((x0, hz + h * 0.12), (x1, hz + h * 0.12), (x0 - 60, h * 0.92), (x1 + 60, h * 0.92)):
+                d.rectangle((x - 4, y - 40, x + 4, y), fill=(230, 220, 200, 255))
+                d.rectangle((x - 4, y - 40, x + 4, y - 30), fill=(220, 90, 50, 255))
+            d.line((x0, hz + h * 0.12 - 20, x1, hz + h * 0.12 - 20), fill=(240, 236, 228, 200), width=2)
+    elif kind == "movil":
+        d.rectangle((0, int(h * 0.6), w, h), fill=(120, 80, 54, 255))
+        pw, ph = w * 0.3, h * 0.82
+        px, py = w * 0.5 - pw / 2, h * 0.1
+        d.rounded_rectangle((px, py, px + pw, py + ph), 36, fill=(20, 20, 22, 255))
+        inner = Image.fromarray(grad(int(ph - 28), int(pw - 24), [(0, (120, 160, 210)), (0.6, (250, 196, 150)), (1, (130, 120, 80))]).astype(np.uint8))
+        im.paste(inner, (int(px + 12), int(py + 14)))
+        d = ImageDraw.Draw(im, "RGBA")
+        cx = px + pw / 2
+        d.rectangle((cx - pw * 0.28, py + ph * 0.5, cx + pw * 0.28, py + ph * 0.72), fill=(200, 160, 146, 255))
+        for k in range(3):
+            xx = cx - pw * 0.22 + k * pw * 0.16
+            d.rectangle((xx, py + ph * 0.55, xx + pw * 0.1, py + ph * 0.67), fill=(255, 200, 130, 255))
+        d.polygon([(cx - 22, py + ph * 0.3), (cx + 26, py + ph * 0.34), (cx - 22, py + ph * 0.38)], fill=(255, 255, 255, 230))
     elif kind == "agente":
         im = Image.fromarray(grad(h, w, [(0, (232, 222, 206)), (1, (198, 178, 152))]).astype(np.uint8))
         d = ImageDraw.Draw(im, "RGBA")

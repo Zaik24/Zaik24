@@ -1,0 +1,135 @@
+.precios__intro {
+  max-width: 680px;
+  margin-bottom: clamp(48px, 5.5vw, 72px);
+}
+.precios__intro .h2 {
+  margin-top: 16px;
+}
+.precios__intro .body-lg {
+  margin-top: 20px;
+}
+.precios__intro .link-underline {
+  display: inline-block;
+  margin-top: 28px;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--col-gap);
+  align-items: stretch;
+}
+.plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(28px, 2.6vw, 40px);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius);
+  background: var(--c-white);
+}
+.plan--featured {
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+  color: #fff;
+}
+.plan__badge {
+  position: absolute;
+  top: clamp(28px, 2.6vw, 40px);
+  right: clamp(28px, 2.6vw, 40px);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--c-ink);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.plan__name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5e5e5e;
+  line-height: 1.6;
+}
+.plan--featured .plan__name {
+  color: #bdbdbd;
+}
+.plan__price {
+  margin-top: 18px;
+  font-family: var(--f-display);
+  font-size: clamp(2.75rem, 3.6vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  font-variant-numeric: tabular-nums;
+}
+.plan__cur {
+  margin-right: 0.15em;
+  font-size: 0.4em;
+  font-weight: 600;
+  letter-spacing: 0;
+  vertical-align: 0.9em;
+}
+.plan__per {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #5e5e5e;
+}
+.plan--featured .plan__per {
+  color: #bdbdbd;
+}
+.plan__features {
+  flex: 1;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid var(--c-line);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.plan--featured .plan__features {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+.plan__features li {
+  position: relative;
+  padding-left: 26px;
+}
+.plan__features li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 0.3em;
+  width: 12px;
+  height: 7px;
+  border-left: 1.75px solid currentColor;
+  border-bottom: 1.75px solid currentColor;
+  transform: rotate(-45deg);
+}
+.plan__note {
+  margin-top: 28px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--c-offwhite);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--c-ink-2);
+}
+.plan--featured .plan__note {
+  background: rgba(255, 255, 255, 0.08);
+  color: #d9d9d9;
+}
+.plan .btn {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 1023px) {
+  .plans {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+}

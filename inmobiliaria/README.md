@@ -1,5 +1,6 @@
-# Alba — sitio web de inmobiliaria premium
+# StateView — sitio web
 
+Reels con renderizado 3D para terrenos y proyectos inmobiliarios.
 Vite + HTML/CSS/JS vanilla + GSAP/ScrollTrigger. Sin frameworks.
 
 ```bash
@@ -9,24 +10,18 @@ npm run build      # genera dist/
 npm run preview    # sirve dist/ en http://localhost:4173
 ```
 
-## Marca
+## Marca y contacto
 
-El nombre se define en **`.env`** (`VITE_BRAND_NAME`, `VITE_BRAND_LEGAL`, `VITE_SITE_URL`) y se inyecta en todo el HTML
-(título, meta tags, Open Graph, logo y textos). El símbolo del logo es un SVG en línea en `src/sections/header/header.html`
-y `src/sections/footer/footer.html`; el favicon está en `public/favicon.svg`.
-
-## Estructura
-
-```
-index.html                         Head (SEO/OG) + includes de cada sección
-vite.config.js                     Plugin `<!-- @include … -->` + %VITE_*% → HTML estático en el build
-src/main.js                        Estilos + header; GSAP se carga diferido (src/lib/motion.js)
-src/styles/tokens.css              Colores, tipografía, espaciado (sistema de diseño)
-src/styles/base.css                Reset, grilla, botones, tarjetas
-src/sections/<sección>/            .html + .css (+ .js) por sección
-  header/     Header sticky, dropdowns, menú móvil
-  hero/       Hero con video controlado por scroll (frame-player.js = canvas)
-  manifiesto/ agentes/ ayuda/ servicios/ footer/
+En **`.env`**: `VITE_BRAND_NAME`, `VITE_BRAND_LEGAL`, `VITE_SITE_URL`, `VITE_WHATSAPP` (formato wa.me, sin +) y
+`VITE_WHATSAPP_DISPLAY`. Se inyectan en todo el HTML: títulos, meta tags, Open Graph, logo, textos y enlaces de WhatsApp.
+Los textos de cada sección están en `src/sections/<sección>/            .html + .css (+ .js) por sección
+  header/    Header fijo con navegación por anclas y menú móvil
+  hero/      Hero con video controlado por scroll (frame-player.js = canvas)
+  problema/  "Vender solo con fotos ya no alcanza" + galería bento
+  clientes/  Carrusel de reels de clientes (YouTube, se carga al hacer clic)
+  caso/      Caso real Siu
+  para-ti/ precios/ pagos/ faq/ cta/ footer/ (incluye botón flotante de WhatsApp)
+src/lib/reels.js                   Reels de YouTube con fachada liviana + carrusel
 src/lib/reveal.js                  Fade-up al entrar en viewport
 public/assets/                     hero.mp4, póster, fotogramas, fotos
 scripts/extract-frames.sh          npm run frames

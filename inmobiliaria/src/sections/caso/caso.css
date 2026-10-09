@@ -1,0 +1,79 @@
+.caso__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--col-gap);
+  align-items: center;
+}
+.caso__media {
+  grid-column: 2 / 6;
+}
+.reel--lg {
+  max-height: 82vh;
+  margin-inline: auto;
+}
+.caso__body {
+  grid-column: 7 / 12;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.caso__body .h2 {
+  margin-top: 20px;
+}
+.caso__body .body-lg {
+  margin-top: 24px;
+  max-width: 52ch;
+}
+.caso__body .btn {
+  margin-top: 36px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--col-gap);
+  width: 100%;
+  margin: 36px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--c-line);
+}
+.stats__item {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+}
+.stats dt {
+  font-size: 0.85rem;
+  color: #5e5e5e;
+}
+.stats dd {
+  margin: 0;
+  font-family: var(--f-display);
+  font-size: clamp(1.75rem, 2.4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: var(--tracking-snug);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 1023px) {
+  .caso__media {
+    grid-column: 1 / 6;
+  }
+  .caso__body {
+    grid-column: 7 / 13;
+  }
+}
+@media (max-width: 767px) {
+  .caso__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .caso__media,
+  .caso__body {
+    grid-column: 1;
+  }
+  .caso__media {
+    max-width: 320px;
+  }
+}

@@ -1,0 +1,30 @@
+.cta-final__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.cta-final__title {
+  max-width: 16ch;
+  font-family: var(--f-display);
+  font-size: clamp(2.5rem, 5.2vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+.cta-final__soft {
+  color: var(--c-muted);
+}
+.cta-final__text {
+  margin-top: 24px;
+  max-width: 48ch;
+}
+.cta-final__inner .btn {
+  margin-top: 36px;
+}
+.cta-final__note {
+  margin-top: 16px;
+  font-size: 0.875rem;
+  color: #5e5e5e;
+}

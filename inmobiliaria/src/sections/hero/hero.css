@@ -43,7 +43,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: calc(var(--header-h) + clamp(48px, 11vh, 150px));
+  padding-top: calc(var(--header-h) + clamp(24px, 5.5vh, 110px));
   will-change: transform;
 }
 
@@ -87,11 +87,42 @@
   }
 }
 
-.hero__content .btn {
+.hero__eyebrow {
+  margin-bottom: clamp(18px, 3vh, 32px);
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(17, 17, 17, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(6px);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
   margin-top: clamp(24px, 4vh, 44px);
 }
 
 @media (max-width: 767px) {
+  /* en retrato, el edificio baja un poco para dejar aire al texto; el fondo continúa el cielo */
+  .hero__sticky {
+    background: #77a3d4;
+  }
+  .hero__media {
+    transform: translateY(9%);
+  }
+  .hero__eyebrow {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.8rem;
+    white-space: nowrap;
+  }
+  .hero__actions .btn--glass {
+    display: none;
+  }
   .hero__content {
     padding-top: calc(var(--header-h) + clamp(28px, 7vh, 64px));
   }
@@ -132,7 +163,10 @@
   .hero__lead[data-hero-intro] {
     animation-delay: 0.15s;
   }
-  .btn[data-hero-intro] {
+  .hero__title[data-hero-intro] {
+    animation-delay: 0.08s;
+  }
+  .hero__actions[data-hero-intro] {
     animation-delay: 0.3s;
   }
 }

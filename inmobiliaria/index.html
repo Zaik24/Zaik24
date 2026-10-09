@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>%VITE_BRAND_NAME% — Inmobiliaria premium | Comprar, vender y alquilar</title>
+    <title>%VITE_BRAND_NAME% — Reels con renderizado 3D para terrenos y proyectos inmobiliarios</title>
     <meta
       name="description"
-      content="%VITE_BRAND_NAME% es una inmobiliaria premium con agentes certificados que te acompañan a comprar, vender o alquilar con claridad, datos y criterio."
+      content="Producimos reels publicitarios para lotes, casas de campo y proyectos inmobiliarios con renderizado 3D. Guion, voz y edición, listos en 48 horas. Trabajamos con cualquier país."
     />
     <link rel="canonical" href="%VITE_SITE_URL%/" />
     <meta name="theme-color" content="#F6F5F2" />
@@ -14,21 +14,21 @@
 
     <!-- Open Graph / redes -->
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_ES" />
+    <meta property="og:locale" content="es_PE" />
     <meta property="og:site_name" content="%VITE_BRAND_LEGAL%" />
-    <meta property="og:title" content="%VITE_BRAND_NAME% — Encuentra lo que te mueve" />
+    <meta property="og:title" content="%VITE_BRAND_NAME% — Un terreno vacío no vende. El sueño de tu comprador, sí." />
     <meta
       property="og:description"
-      content="Agentes expertos. Acompañamiento real. Un camino claro hacia tu próximo lugar."
+      content="Reels con renderizado 3D para lotes, casas de campo y proyectos inmobiliarios. Guion, voz y edición en 48 horas."
     />
     <meta property="og:url" content="%VITE_SITE_URL%/" />
     <meta property="og:image" content="%VITE_SITE_URL%/assets/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Ático de ladrillo con terraza ajardinada entre nubes al atardecer" />
+    <meta property="og:image:alt" content="Render 3D de una casa con terraza ajardinada entre nubes al atardecer" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="%VITE_BRAND_NAME% — Encuentra lo que te mueve" />
-    <meta name="twitter:description" content="Agentes expertos. Acompañamiento real. Un camino claro hacia tu próximo lugar." />
+    <meta name="twitter:title" content="%VITE_BRAND_NAME% — Un terreno vacío no vende. El sueño de tu comprador, sí." />
+    <meta name="twitter:description" content="Reels con renderizado 3D para lotes, casas de campo y proyectos inmobiliarios. Guion, voz y edición en 48 horas." />
     <meta name="twitter:image" content="%VITE_SITE_URL%/assets/og-image.jpg" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -63,12 +63,19 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "RealEstateAgent",
+        "@type": "ProfessionalService",
         "name": "%VITE_BRAND_LEGAL%",
+        "description": "Reels publicitarios con renderizado 3D para terrenos, casas de campo y proyectos inmobiliarios.",
         "url": "%VITE_SITE_URL%/",
         "image": "%VITE_SITE_URL%/assets/og-image.jpg",
-        "email": "hola@alba.example",
-        "telephone": "+00 000 000 000"
+        "telephone": "+%VITE_WHATSAPP%",
+        "areaServed": "Worldwide",
+        "openingHours": "Mo-Sa",
+        "makesOffer": [
+          { "@type": "Offer", "name": "Video individual", "price": "157", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Paquete 5 videos", "price": "727", "priceCurrency": "USD" },
+          { "@type": "Offer", "name": "Paquete 10 videos", "price": "1397", "priceCurrency": "USD" }
+        ]
       }
     </script>
     <script>
@@ -83,10 +90,14 @@
 
     <main id="contenido">
       <!-- @include sections/hero/hero.html -->
-      <!-- @include sections/manifiesto/manifiesto.html -->
-      <!-- @include sections/agentes/agentes.html -->
-      <!-- @include sections/ayuda/ayuda.html -->
-      <!-- @include sections/servicios/servicios.html -->
+      <!-- @include sections/problema/problema.html -->
+      <!-- @include sections/clientes/clientes.html -->
+      <!-- @include sections/caso/caso.html -->
+      <!-- @include sections/para-ti/para-ti.html -->
+      <!-- @include sections/precios/precios.html -->
+      <!-- @include sections/pagos/pagos.html -->
+      <!-- @include sections/faq/faq.html -->
+      <!-- @include sections/cta/cta.html -->
     </main>
 
     <!-- @include sections/footer/footer.html -->
