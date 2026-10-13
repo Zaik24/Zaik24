@@ -93,6 +93,11 @@ address {
 .section--offwhite {
   background: var(--c-offwhite);
 }
+/* dos secciones seguidas con el mismo fondo no duplican el espacio entre ellas */
+.section--white + .section--white,
+.section--offwhite + .section--offwhite {
+  padding-top: 0;
+}
 
 /* Grilla de 12 columnas reutilizable */
 .grid-12 {
