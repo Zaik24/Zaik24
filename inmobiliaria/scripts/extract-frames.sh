@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Extrae los fotogramas del video del hero a WebP para el scroll scrubbing en <canvas>.
 #
-#   npm run frames                      # usa public/assets/hero.mp4
+#   npm run frames                      # usa fuente/hero.mp4
 #   npm run frames -- otro-video.mp4
 #
 # Variables opcionales:
@@ -21,7 +21,7 @@
 set -euo pipefail
 
 cd "$(dirname "$0")/.."
-SRC="${1:-public/assets/hero.mp4}"
+SRC="${1:-fuente/hero.mp4}"
 OUT="public/assets/frames"
 FPS="${FPS:-24}"
 DESKTOP_W="${DESKTOP_W:-1920}"
