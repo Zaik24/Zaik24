@@ -51,7 +51,7 @@ El scroll se mapea **por tramos** al tiempo del video: cada etapa ocupa exactame
 Todas las transiciones son GSAP + ScrollTrigger (opacity/transform), con el mismo suavizado que el video, y se revierten al subir.
 
 Para cambiar el video:
-1. Reemplaza `fuente/hero.mp4`. (está fuera de `public/` para no publicarse: la web solo usa los fotogramas).
+1. Reemplaza `fuente/hero.mp4` (está fuera de `public/` para no publicarse: la web solo usa los fotogramas).
 2. `npm run frames` (requiere **ffmpeg**: `brew install ffmpeg` · `sudo apt install ffmpeg` · `winget install ffmpeg`). Genera:
    - `public/assets/frames/desktop/` — 24 fps, 1920 px · `public/assets/frames/mobile/` — recorte 9:16 sobre la casa, 1080 px de alto
    - `public/assets/frames/manifest.json` (cantidad, fps, duración)
