@@ -6,7 +6,7 @@ import './sections/confianza/confianza.css';
 import './sections/porque/porque.css';
 import './sections/proceso/proceso.css';
 import './sections/clientes/clientes.css';
-import './sections/caso/caso.css';
+import './sections/avatares/avatares.css';
 import './sections/para-ti/para-ti.css';
 import './sections/precios/precios.css';
 import './sections/pagos/pagos.css';

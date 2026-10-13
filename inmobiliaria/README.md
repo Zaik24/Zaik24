@@ -23,7 +23,7 @@ Los textos de cada sección están en `src/sections/<sección>/            .html
   porque/    "¿Por qué StateView?" + video en bucle (public/assets/video/porque*.mp4), y "Antes de existir…": 4 imágenes en chevrones (img/story-1..4.webp) que entran de izquierda a derecha
   proceso/   "Del plano a la realidad visual": 3 pasos (llamada, guion, video en 48 h)
   clientes/  Carrusel de reels de clientes (YouTube, se carga al hacer clic)
-  caso/      Caso real Siu
+  avatares/  Avatares 3D: video vertical en bucle (assets/video/avatares.mp4) + 100% / 48 h
   para-ti/ precios/ pagos/ faq/ cta/ footer/ (incluye botón flotante de WhatsApp)
 src/lib/reels.js                   Reels de YouTube con fachada liviana + carrusel
 src/lib/reveal.js                  Fade-up al entrar en viewport
