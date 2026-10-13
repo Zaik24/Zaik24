@@ -20,7 +20,7 @@ Los textos de cada sección están en `src/sections/<sección>/            .html
   header/    Header fijo con navegación por anclas y menú móvil
   hero/      Hero con video controlado por scroll (frame-player.js = canvas)
   confianza/ Franja +10 proyectos · +5 marcas · países partners (contador animado)
-  porque/    "¿Por qué StateView?" + panorámica, y "Antes de existir…" con 4 etapas en chevrones
+  porque/    "¿Por qué StateView?" + video en bucle (public/assets/video/porque*.mp4), y "Antes de existir…": 4 imágenes en chevrones (img/story-1..4.webp) que entran de izquierda a derecha
   problema/  "Vender solo con fotos ya no alcanza" + galería bento
   clientes/  Carrusel de reels de clientes (YouTube, se carga al hacer clic)
   caso/      Caso real Siu

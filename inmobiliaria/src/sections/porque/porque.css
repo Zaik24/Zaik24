@@ -32,10 +32,12 @@
   color: #737373; /* párrafo: 4.5:1 */
 }
 .porque__wide {
-  aspect-ratio: 25 / 11;
+  aspect-ratio: 16 / 9;
 }
-.porque__wide img {
-  transform-origin: 50% 60%;
+.porque__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ---------- Antes de existir, hay que poder imaginarlo ---------- */
@@ -101,8 +103,5 @@
   }
   .porque__label {
     padding-top: 0;
-  }
-  .porque__wide {
-    aspect-ratio: 4 / 3;
   }
 }

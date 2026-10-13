@@ -9,27 +9,29 @@
     </div>
 
     <figure class="porque__wide media" data-reveal>
-      <img
-        src="/assets/img/porque-wide.webp"
-        srcset="/assets/img/porque-wide-1200.webp 1200w, /assets/img/porque-wide.webp 2400w"
-        sizes="(max-width: 1440px) 100vw, 1376px"
-        alt="Casa moderna terminada al atardecer, renderizada en 3D sobre su terreno"
-        width="2400"
-        height="1056"
-        loading="lazy"
-        decoding="async"
-        data-parallax
-      />
+      <video
+        class="porque__video"
+        muted
+        loop
+        playsinline
+        preload="none"
+        poster="/assets/video/porque-poster.webp"
+        aria-label="Del terreno vacío a un condominio terminado: la obra avanza en 3D hasta la vista aérea al atardecer"
+        data-autoplay
+      >
+        <source src="/assets/video/porque-1280.mp4" type="video/mp4" media="(max-width: 900px)" />
+        <source src="/assets/video/porque.mp4" type="video/mp4" />
+      </video>
     </figure>
 
     <div class="imaginar">
       <h2 class="imaginar__title" data-reveal>Antes de existir, <span class="imaginar__soft">hay que poder imaginarlo.</span></h2>
 
-      <ol class="story" role="list" aria-label="Del terreno vacío a la casa terminada">
-        <li class="story__item" data-reveal><img src="/assets/img/story-1.webp" alt="Terreno vacío al atardecer" width="640" height="800" loading="lazy" decoding="async" /></li>
-        <li class="story__item" data-reveal><img src="/assets/img/story-2.webp" alt="Estructura de concreto en construcción sobre el terreno" width="640" height="800" loading="lazy" decoding="async" /></li>
-        <li class="story__item" data-reveal><img src="/assets/img/story-3.webp" alt="Casa terminada con jardín e interiores iluminados" width="640" height="800" loading="lazy" decoding="async" /></li>
-        <li class="story__item" data-reveal><img src="/assets/img/story-4.webp" alt="Vista aérea de la casa entre las nubes" width="640" height="800" loading="lazy" decoding="async" /></li>
+      <ol class="story" role="list" aria-label="Del plano al proyecto terminado">
+        <li class="story__item"><img src="/assets/img/story-1.webp" alt="Planos arquitectónicos del proyecto" width="640" height="800" loading="lazy" decoding="async" /></li>
+        <li class="story__item"><img src="/assets/img/story-2.webp" alt="Estructura de concreto en plena construcción" width="640" height="800" loading="lazy" decoding="async" /></li>
+        <li class="story__item"><img src="/assets/img/story-3.webp" alt="Render 3D del patio interior terminado, con madera y vegetación" width="640" height="800" loading="lazy" decoding="async" /></li>
+        <li class="story__item"><img src="/assets/img/story-4.webp" alt="Vista aérea del condominio terminado al atardecer" width="640" height="800" loading="lazy" decoding="async" /></li>
       </ol>
 
       <p class="imaginar__text" data-reveal>

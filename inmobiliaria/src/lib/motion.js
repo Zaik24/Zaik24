@@ -4,6 +4,7 @@ import { initHero } from '../sections/hero/hero.js';
 import { initReveal } from './reveal.js';
 import { initCounters } from './counters.js';
 import { initParallax } from './parallax.js';
+import { initStory } from './story.js';
 
 /** Todo lo que depende de GSAP: se carga aparte para no bloquear el primer pintado. */
 export function initMotion({ reducedMotion }) {
@@ -11,6 +12,7 @@ export function initMotion({ reducedMotion }) {
   initReveal({ reducedMotion });
   initCounters({ reducedMotion });
   initParallax({ reducedMotion });
+  initStory({ reducedMotion });
   initHero({ reducedMotion });
   document.fonts?.ready.then(() => ScrollTrigger.refresh());
 }

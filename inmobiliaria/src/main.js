@@ -16,12 +16,14 @@ import './sections/footer/footer.css';
 
 import { initHeader } from './sections/header/header.js';
 import { initCarousels, initReels } from './lib/reels.js';
+import { initAutoplayVideos } from './lib/autoplay-video.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 initHeader();
 initReels();
 initCarousels();
+initAutoplayVideos({ reducedMotion });
 
 // GSAP + ScrollTrigger (reveals y hero) se cargan cuando el navegador está libre
 const loadMotion = () => import('./lib/motion.js').then((m) => m.initMotion({ reducedMotion }));
