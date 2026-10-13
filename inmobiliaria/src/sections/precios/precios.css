@@ -8,10 +8,6 @@
 .precios__intro .body-lg {
   margin-top: 20px;
 }
-.precios__intro .link-underline {
-  display: inline-block;
-  margin-top: 28px;
-}
 
 .plans {
   display: grid;

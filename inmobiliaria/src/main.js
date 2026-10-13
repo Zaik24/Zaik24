@@ -8,7 +8,6 @@ import './sections/proceso/proceso.css';
 import './sections/clientes/clientes.css';
 import './sections/avatares/avatares.css';
 import './sections/precios/precios.css';
-import './sections/pagos/pagos.css';
 import './sections/faq/faq.css';
 import './sections/cta/cta.css';
 import './sections/footer/footer.css';
