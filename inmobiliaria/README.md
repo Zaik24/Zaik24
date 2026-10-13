@@ -21,7 +21,7 @@ Los textos de cada sección están en `src/sections/<sección>/            .html
   hero/      Hero con video controlado por scroll (frame-player.js = canvas)
   confianza/ Franja +10 proyectos · +5 marcas · países partners (contador animado)
   porque/    "¿Por qué StateView?" + video en bucle (public/assets/video/porque*.mp4), y "Antes de existir…": 4 imágenes en chevrones (img/story-1..4.webp) que entran de izquierda a derecha
-  problema/  "Vender solo con fotos ya no alcanza" + galería bento
+  proceso/   "Del plano a la realidad visual": 3 pasos (llamada, guion, video en 48 h)
   clientes/  Carrusel de reels de clientes (YouTube, se carga al hacer clic)
   caso/      Caso real Siu
   para-ti/ precios/ pagos/ faq/ cta/ footer/ (incluye botón flotante de WhatsApp)
@@ -30,7 +30,6 @@ src/lib/reveal.js                  Fade-up al entrar en viewport
 public/assets/                     hero.mp4, póster, fotogramas, fotos
 scripts/extract-frames.sh          npm run frames
 scripts/optimize-images.sh         npm run images
-scripts/dev/                       Generadores del video demo y de los placeholders
 ```
 
 ## Hero con video controlado por scroll
@@ -68,7 +67,7 @@ Con `prefers-reduced-motion: reduce`, ahorro de datos o 2G: primer fotograma fij
 
 ## Fotos
 
-Ver `public/assets/img/README.md`: nombres, proporciones y un prompt por foto. Tras reemplazarlas: `npm run images`.
+Ver `public/assets/img/README.md`: nombres y proporciones de las imágenes de "Antes de existir…".
 
 ## Despliegue en Netlify
 

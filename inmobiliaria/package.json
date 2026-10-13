@@ -9,8 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "frames": "bash scripts/extract-frames.sh",
-    "images": "bash scripts/optimize-images.sh",
-    "demo:placeholders": "python3 scripts/dev/make-placeholders.py public/assets"
+    "images": "bash scripts/optimize-images.sh"
   },
   "engines": {
     "node": ">=20"

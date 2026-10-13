@@ -4,7 +4,7 @@ import './sections/header/header.css';
 import './sections/hero/hero.css';
 import './sections/confianza/confianza.css';
 import './sections/porque/porque.css';
-import './sections/problema/problema.css';
+import './sections/proceso/proceso.css';
 import './sections/clientes/clientes.css';
 import './sections/caso/caso.css';
 import './sections/para-ti/para-ti.css';
