@@ -1,11 +1,8 @@
 /* ---------- Del plano a la realidad visual (pasos) ---------- */
-.proceso {
-  padding-block: clamp(96px, 12vw, 200px);
-}
 .proceso__inner {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 64px var(--col-gap);
+  gap: 48px var(--col-gap);
   align-items: start;
 }
 .proceso__intro {
@@ -13,13 +10,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: clamp(32px, 3.2vw, 48px);
+  gap: clamp(24px, 2.6vw, 36px);
 }
 .proceso__title {
   font-family: var(--f-display);
   font-size: clamp(2.1rem, 3vw + 0.6rem, 3.4rem);
   font-weight: 600;
-  line-height: 1.06;
+  line-height: 1.02;
   letter-spacing: var(--tracking-tight);
 }
 .proceso__title .proceso__soft {
@@ -33,7 +30,7 @@
   grid-column: 7 / 13;
 }
 .proceso__label {
-  padding-bottom: clamp(24px, 2.4vw, 36px);
+  padding-bottom: 20px;
   font-size: 1.05rem;
   font-weight: 500;
 }
@@ -45,9 +42,9 @@
 }
 .step {
   display: grid;
-  grid-template-columns: 4.5rem 1fr;
+  grid-template-columns: 3rem 1fr;
   align-items: baseline;
-  padding-block: clamp(32px, 3.4vw, 52px);
+  padding-block: clamp(20px, 2vw, 28px);
   border-bottom: 1px solid var(--c-line);
 }
 .step__num {
@@ -58,27 +55,22 @@
 }
 .step__text {
   font-family: var(--f-display);
-  font-size: clamp(1.25rem, 0.9vw + 0.85rem, 1.75rem);
+  font-size: clamp(1.3rem, 1.1vw + 0.85rem, 1.9rem);
   font-weight: 500;
-  line-height: 1.32;
+  line-height: 1.2;
   letter-spacing: var(--tracking-snug);
   text-wrap: pretty;
 }
 .step__text strong {
-  display: block;
-  margin-bottom: 0.4em;
   font-weight: 600;
 }
 
 @media (max-width: 899px) {
-  .proceso__inner {
-    row-gap: 72px;
-  }
   .proceso__intro,
   .proceso__steps {
     grid-column: 1 / -1;
   }
   .step {
-    grid-template-columns: 2.8rem 1fr;
+    grid-template-columns: 2.4rem 1fr;
   }
 }
