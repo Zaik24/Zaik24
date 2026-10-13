@@ -22,6 +22,7 @@ Los textos de cada sección están en `src/sections/<sección>/            .html
   confianza/ Franja +10 proyectos · +5 marcas · países partners (contador animado)
   porque/    "¿Por qué StateView?" + video en bucle (public/assets/video/porque*.mp4), y "Antes de existir…": 4 imágenes en chevrones (img/story-1..4.webp) que entran de izquierda a derecha
   proceso/   "Del plano a la realidad visual": 3 pasos (llamada, guion, video en 48 h)
+  transformacion/ Antes/después: material del cliente (img/material-original.webp) y video terminado con botón de sonido
   clientes/  Carrusel de reels de clientes (YouTube, se carga al hacer clic)
   avatares/  Avatares 3D: video vertical en bucle (assets/video/avatares.mp4) + 100% / 48 h
   precios/ faq/ cta/ footer/ (incluye botón flotante de WhatsApp)

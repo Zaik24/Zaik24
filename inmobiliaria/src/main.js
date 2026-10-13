@@ -5,6 +5,7 @@ import './sections/hero/hero.css';
 import './sections/confianza/confianza.css';
 import './sections/porque/porque.css';
 import './sections/proceso/proceso.css';
+import './sections/transformacion/transformacion.css';
 import './sections/clientes/clientes.css';
 import './sections/avatares/avatares.css';
 import './sections/precios/precios.css';
@@ -14,7 +15,7 @@ import './sections/footer/footer.css';
 
 import { initHeader } from './sections/header/header.js';
 import { initCarousels, initReels } from './lib/reels.js';
-import { initAutoplayVideos } from './lib/autoplay-video.js';
+import { initAutoplayVideos, initSoundToggles } from './lib/autoplay-video.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -22,6 +23,7 @@ initHeader();
 initReels();
 initCarousels();
 initAutoplayVideos({ reducedMotion });
+initSoundToggles();
 
 // GSAP + ScrollTrigger (reveals y hero) se cargan cuando el navegador está libre
 const loadMotion = () => import('./lib/motion.js').then((m) => m.initMotion({ reducedMotion }));

@@ -19,3 +19,20 @@ export function initAutoplayVideos({ reducedMotion }) {
   );
   videos.forEach((v) => io.observe(v));
 }
+
+// Botón de sonido sobre un video en bucle (empieza silenciado)
+export function initSoundToggles() {
+  document.querySelectorAll('[data-sound-toggle]').forEach((btn) => {
+    const video = btn.parentElement.querySelector('video');
+    const label = btn.querySelector('.sound-toggle__label');
+    btn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      if (!video.muted) {
+        video.preload = 'auto';
+        video.play().catch(() => {});
+      }
+      btn.setAttribute('aria-pressed', String(!video.muted));
+      label.textContent = video.muted ? 'Activar sonido' : 'Silenciar';
+    });
+  });
+}
