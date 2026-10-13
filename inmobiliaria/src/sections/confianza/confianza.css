@@ -1,0 +1,74 @@
+/* ---------- Franja de confianza (justo después del hero) ---------- */
+.confianza {
+  padding-block: clamp(24px, 4vw, 56px) clamp(56px, 7vw, 100px);
+}
+.trust {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+/* Mismo esquema en las 3 columnas: fila de valor de alto fijo (centrada) + etiqueta alineada arriba */
+.trust__item {
+  --value-h: clamp(3.2rem, 5.6vw, 5.5rem);
+  display: grid;
+  grid-template-rows: var(--value-h) auto;
+  align-content: start;
+  justify-items: center;
+  row-gap: 14px;
+  padding: clamp(28px, 3.4vw, 48px) 16px;
+  text-align: center;
+}
+.trust__value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--value-h);
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 5.4vw, 5.25rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.trust__plus {
+  color: var(--c-brand);
+}
+.trust__num {
+  display: inline-block;
+  text-align: left; /* al contar, el número crece hacia la derecha sin mover el "+" */
+}
+.trust__value--name {
+  flex-wrap: wrap;
+  column-gap: 0.28em;
+  font-size: clamp(1.35rem, 2.3vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-snug);
+  white-space: normal;
+}
+.trust__value--name span {
+  white-space: nowrap; /* nunca queda un "·" suelto al inicio de línea */
+}
+.trust__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: #5e5e5e;
+}
+@media (min-width: 1100px) {
+  .trust__label {
+    white-space: nowrap; /* en pantallas anchas las 3 etiquetas van en una sola línea */
+  }
+}
+@media (max-width: 767px) {
+  .trust {
+    grid-template-columns: 1fr;
+  }
+  .trust__item {
+    grid-template-rows: auto auto;
+    padding: 28px 8px;
+  }
+}
+

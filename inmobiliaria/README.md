@@ -19,6 +19,8 @@ En **`.env`**: `VITE_BRAND_NAME`, `VITE_BRAND_LEGAL`, `VITE_SITE_URL`, `VITE_WHA
 Los textos de cada sección están en `src/sections/<sección>/            .html + .css (+ .js) por sección
   header/    Header fijo con navegación por anclas y menú móvil
   hero/      Hero con video controlado por scroll (frame-player.js = canvas)
+  confianza/ Franja +10 proyectos · +5 marcas · países partners (contador animado)
+  porque/    "¿Por qué StateView?" + panorámica, y "Antes de existir…" con 4 etapas en chevrones
   problema/  "Vender solo con fotos ya no alcanza" + galería bento
   clientes/  Carrusel de reels de clientes (YouTube, se carga al hacer clic)
   caso/      Caso real Siu

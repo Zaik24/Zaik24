@@ -2,6 +2,8 @@ import './styles/tokens.css';
 import './styles/base.css';
 import './sections/header/header.css';
 import './sections/hero/hero.css';
+import './sections/confianza/confianza.css';
+import './sections/porque/porque.css';
 import './sections/problema/problema.css';
 import './sections/clientes/clientes.css';
 import './sections/caso/caso.css';

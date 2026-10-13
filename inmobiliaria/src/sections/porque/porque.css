@@ -1,0 +1,108 @@
+/* ---------- ¿Por qué StateView? ---------- */
+.porque__head {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px var(--col-gap);
+  align-items: start;
+  margin-bottom: clamp(40px, 5vw, 72px);
+}
+.porque__label {
+  grid-column: 1 / 5;
+  padding-top: 0.55em;
+  font-family: var(--f-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.porque__lead {
+  grid-column: 6 / 13;
+  font-family: var(--f-display);
+  font-size: clamp(1.7rem, 2.3vw + 0.6rem, 2.9rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: var(--tracking-snug);
+  text-wrap: pretty;
+}
+/* segundo tono gris claro, con el contraste mínimo de cada tamaño */
+.porque__soft,
+.imaginar__title .imaginar__soft {
+  color: #949494; /* texto grande: 3:1 */
+}
+.imaginar__text .imaginar__soft {
+  color: #737373; /* párrafo: 4.5:1 */
+}
+.porque__wide {
+  aspect-ratio: 25 / 11;
+}
+.porque__wide img {
+  transform-origin: 50% 60%;
+}
+
+/* ---------- Antes de existir, hay que poder imaginarlo ---------- */
+.imaginar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: clamp(96px, 12vw, 180px);
+}
+.imaginar__title {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 3.6vw + 0.4rem, 3.75rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+/* 4 imágenes en forma de flecha que encajan entre sí (como chevrones) */
+.story {
+  --gap: 1.8%;
+  --w: calc((100% - 3 * var(--gap)) / 3.1);
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  margin: clamp(40px, 5vw, 64px) 0;
+  padding: 0;
+  list-style: none;
+}
+.story__item {
+  flex: 0 0 var(--w);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  clip-path: polygon(0 0, 70% 0, 100% 50%, 70% 100%, 0 100%, 30% 50%);
+}
+.story__item + .story__item {
+  margin-left: calc(var(--gap) - 0.3 * var(--w));
+}
+.story__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease);
+}
+.story__item:hover img {
+  transform: scale(1.04);
+}
+
+.imaginar__text {
+  max-width: 34ch;
+  font-size: clamp(1.1rem, 0.5vw + 1rem, 1.35rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+@media (max-width: 767px) {
+  .porque__label,
+  .porque__lead {
+    grid-column: 1 / -1;
+  }
+  .porque__label {
+    padding-top: 0;
+  }
+  .porque__wide {
+    aspect-ratio: 4 / 3;
+  }
+}
