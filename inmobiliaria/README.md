@@ -19,7 +19,7 @@ En **`.env`**: `VITE_BRAND_NAME`, `VITE_BRAND_LEGAL`, `VITE_SITE_URL`, `VITE_WHA
 Los textos de cada sección están en `src/sections/<sección>/            .html + .css (+ .js) por sección
   header/    Header fijo con navegación por anclas y menú móvil
   hero/      Hero con video controlado por scroll (frame-player.js = canvas)
-  confianza/ Franja +10 proyectos · +5 marcas · países partners (contador animado)
+  confianza/ Franja +25 proyectos · +10 inmobiliarias · países partners (contador animado)
   porque/    "¿Por qué StateView?" + video en bucle (public/assets/video/porque*.mp4), y "Antes de existir…": 4 imágenes en chevrones (img/story-1..4.webp) que entran de izquierda a derecha
   proceso/   "Del plano a la realidad visual": 3 pasos (llamada, guion, video en 48 h)
   transformacion/ Antes/después: material del cliente (img/material-original.webp) y video terminado con botón de sonido
